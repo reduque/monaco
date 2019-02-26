@@ -1,0 +1,136 @@
+header{
+	background: #000;
+	height: 83px;
+	position: fixed;
+    width:1024px;
+    max-width: 100%;
+	top: 0;
+	z-index: 1000;
+	.tabla{
+		height: 83px;
+		display: table;
+		width: 100%;
+		ul{
+			display: table-row;
+			height: 100%;
+			li{
+				display: table-cell;
+				vertical-align: middle;
+				width: 41.6015625%;
+				&.logo{
+					width: 16.796875%;
+					img{
+						width: 172px;
+						height: auto;
+					}
+				}
+				.menu{
+					display: block;
+					color: #FFF;
+					text-indent: -999rem;
+					background:url(../img/hamburguesa.svg) no-repeat 40px 30px / 32px auto;
+					height: 100%;
+					&:hover{
+						background:url(../img/hamburguesa_b.svg) no-repeat 40px 30px / 32px auto;
+					}
+				}
+			}
+		}
+	}
+	nav{
+		position: absolute;
+		top: 0;
+		left: 0;
+		background: #F8B627;
+		width: 50%;
+		display: none;
+		a.cerrar_hamburguesa{
+			text-indent: -999rem;
+			background: url(../img/hamburguesa_b.svg) no-repeat 40px 30px / 32px auto;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 80px;
+			height: 100%;
+		}
+		ul{
+			@include ullimpio();
+			padding: 16px 0;
+			li{
+				padding-left: 80px;
+				a{
+					font-family: $questa_granderegular;
+					color: #000;
+					font-size: 3.85rem;
+					line-height: 4.6rem;
+					display: block;
+					&:hover, &.activo{
+						color: #FFF;
+					}
+				}
+			}
+		}
+	}
+}
+
+footer{
+	padding: 48px 94px;
+	background: $fondo_crema;
+	.footer1{
+		*{color: $color;}
+		background: url(../img/footer.jpg) no-repeat 0 0 / 275px auto;
+		border-bottom: 1px solid #000;
+		height: 240px;
+		margin-bottom: 15px;
+		.floatd{
+			width: 380px;
+			padding-top: 20px;
+			a.footer_reachus{
+				font-size: 5.15rem;
+				font-family: $questa_granderegular;
+				line-height: 5.2rem;
+				&:hover{
+					color: $color;
+				}
+			}
+			p{
+				font-size: 1rem;
+				font-weight: 300;
+				&.correo{
+					padding-top: 24px;
+					a img{width: 80%; height: auto;}
+				}
+			}
+		}
+	}
+	.footer2{
+		background: url(../img/logo_negro.svg) no-repeat 0 0 / 163px auto;
+		.floatd{
+			div{
+				float: left;
+				width: 124px;
+				ul{
+					@include ullimpio();
+					li{
+						a{
+							color: #808080;
+							font-size: 0.7rem;
+							font-weight: 300;
+						}
+						a.dorado{
+							color: $color;
+							font-family: $questa_granderegular;
+							font-size: 0.9rem;
+							font-weight: normal;
+						}
+						a:hover{
+							font-weight: bold;
+						}
+					}
+				}
+
+			}
+		}
+	}
+}
+

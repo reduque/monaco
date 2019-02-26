@@ -1,0 +1,69 @@
+@import "_mixin";
+// variables
+
+@font-face {
+    font-family: 'questa_granderegular';
+    src: url('../font/2-Questa_Grande_Regular-webfont.eot');
+    src: url('../font/2-Questa_Grande_Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/2-Questa_Grande_Regular-webfont.woff2') format('woff2'),
+         url('../font/2-Questa_Grande_Regular-webfont.woff') format('woff'),
+         url('../font/2-Questa_Grande_Regular-webfont.ttf') format('truetype'),
+         url('../font/2-Questa_Grande_Regular-webfont.svg#questa_granderegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+$roboto: 'Roboto', sans-serif;
+$questa_granderegular: 'questa_granderegular';
+$color: #A08742;
+$color_vino: #6F003F;
+$color_azul: #006778;
+$fondo_crema: #EEE6DB;
+
+//reset
+
+
+*{font-family: $roboto; color: #000;}
+
+h1, h2, h3{font-weight: 600;}
+html{
+    margin: 0;
+    padding: 0;
+}
+body {
+    margin:0;
+    padding:0;
+	background: #333;
+}
+@mixin ullimpio(){list-style:none; margin:0; padding:0;}
+a img{border:none}
+a{text-decoration:none; outline:0; border:none;}
+form{margin:0; padding:0}
+
+.cuerpo{
+    margin:0 auto;
+    padding-top: 83px;
+    width:1024px;
+    max-width: 100%;
+    background: #FFF;
+    position: relative;
+}
+
+.floati{float:left;}
+.floatd{float:right;}
+.separador{clear:both;height:0px!important; overflow:hidden}
+.separadorv{clear:both;height:10px; font-size:1px;}
+@mixin ul_limpio(){list-style:none; margin:0; padding:0;}
+
+.noenpc{display: none;}
+@media only screen and (max-width:640px){
+	.noenpc{display: block;}
+	.noenmobile{display: none;}
+}
+
+@import "_layout";
+@import "_home";
+
+a{
+    @include transition(color, 500ms);
+}
