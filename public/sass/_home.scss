@@ -1,0 +1,184 @@
+.home_cuote{
+    background: #000;
+    position: relative;
+    p{
+        color: $color;
+        font-size: 3.85rem;
+        line-height: 4.6rem;
+        margin: 0;
+        padding: 6% 11%;
+        text-align: center;
+        font-family: $questa_granderegular;
+        &:before{
+            content: '';
+            display: inline-block;
+            width: 40px;
+            height: 2.8rem;
+            background: url(../img/comillas1.svg) no-repeat 0 0 / 26px auto;
+        }
+        &:after{
+            content: '';
+            display: inline-block;
+            width: 53px;
+            height: 2.8rem;
+            background: url(../img/comillas2.svg) no-repeat right 0 / 37px auto;
+        }
+    }
+}
+.banner_home1{
+    background: url(../img/banner_home.jpg);
+    height: 442px;
+    position: relative;
+    overflow: hidden;
+    .tapa{
+        position: absolute;
+        bottom: 0;
+        right: 171px;
+        background: url(../img/banner_home.png);
+        width: 200px;
+        height: 207px;
+    }
+    .o{
+        position: absolute;
+        right: 171px;
+        width: 200px;
+        height: 400px;
+        top: 400px;
+        background:url(../img/o.svg) no-repeat 0 0 / 200px auto;
+    }
+}
+.welcome_home{
+    background: $fondo_crema;
+    position: relative;
+    padding-bottom: 36px;
+    .latas{
+        position: absolute;
+        left: 17px;
+        top: -190px;
+        width: 610px;
+        height: 408px;
+        background: url(../img/latas_home.png);
+    }
+    h1{
+        margin: 0;
+        text-align: right;
+        font-size: 5rem;
+        color: $color_vino;
+        font-family: $questa_granderegular;
+        font-weight: normal;
+        padding: 32px 72px 88px 0;
+    }
+    p{
+        text-align: center;
+        color: $color;
+        font-size: 1.85rem;
+        font-weight: 300;
+        line-height: 2.35rem;
+        margin: 16px 0;
+        b{
+            color: $color;
+            font-weight: 900;
+            font-size: 1.6rem;
+        }
+    }
+}
+.bloque4{
+    background: #000;
+    text-align: center;
+    padding: 40px 0;
+    h3{
+        color: #FFF;
+        font-weight: 900;
+        font-size: 1.6rem;
+        margin: 0;
+        letter-spacing: 5px;
+    }
+    h2{
+        color: $color;
+        font-family: $questa_granderegular;
+        font-weight: normal;
+        font-size: 3.85rem;
+        margin: 24px 0 0px 0;
+    }
+    p{
+        color: $color;
+        font-weight: 300;
+        font-size: 1.85rem;
+        margin: 8px 0;
+    }
+}
+.banner_home2{
+    margin-top: -192px;
+    position: relative;
+}
+.receta_home{
+    height: 512px;
+    .bloque{
+        float: left;
+        height: 100%;
+        width: 50%;
+    }
+    .textos{
+        background: #DF3818;
+        text-align: center;
+        position: relative;
+        h2{
+            margin: 0;
+            padding-top: 40px;
+            font-size: 1rem;
+            font-weight: 900;
+            letter-spacing: 3px;
+        }
+        h3{
+            color: #FFF;
+            font-family: $questa_granderegular;
+            font-size: 2.5rem;
+            margin: 0;
+            font-weight: normal;
+        }
+        .pasos{
+            width: 36px;
+            border-top: 2px solid #000;
+            margin: 16px auto 4px auto;
+            font-size: 1.1rem;
+            line-height: 1.6rem;
+            font-weight: bold;
+        }
+        p{
+            margin: 0 auto;
+            font-size: 1.1rem;
+            width: 320px;
+        }
+    }
+    .imagen{
+        background-size: cover;
+        background-position: center center;
+        background-color: #333;
+    }
+
+}
+.bloque5{
+    text-align: center;
+    padding: 32px 0;
+    h2{
+        margin: 0;
+        color: $color_azul;
+        font-size: 3.85rem;
+        font-weight: normal;
+        font-family: $questa_granderegular;
+
+    }
+    p{
+        color: $color;
+        font-size: 1.85rem;
+        font-weight: 300;
+        margin-left: auto;
+        margin-right: auto;
+        width: 768px;
+    }
+}
+
+.pallax{
+    height: 480px;
+    background: url(../img/pallax_home.jpg) no-repeat center 0 / auto 200%;
+}
