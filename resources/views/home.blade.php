@@ -43,6 +43,11 @@
             <p>Process the zucchini and dry excess liquid with paper towels and add to mushrooms</p>
             <div class="pasos">3</div>
             <p>Add oil to skillet, heat and sauté onions and yellow pepper paste until softened.</p>
+            <div class="botones">
+                <center>
+                    <a href="">FULL VIEW</a><a href="">SEE MORE RECIPEES</a>
+                </center>
+            </div>
             <!-- contenido dinámico -->
         </div>
         <div class="imagen bloque" style="background-image: url(uploads/recetas/r1.jpg)"></div>

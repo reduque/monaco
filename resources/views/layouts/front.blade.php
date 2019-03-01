@@ -28,7 +28,7 @@
                 <ul>
                     <li><a href="" class="menu">Menu</a></li>
                     <li class="logo"><a href="{{ route('home') }}" title="Monaco"><img src="img/logo.svg" alt="Monaco"></a> </li>
-                    <li></li>
+                    <li><a href="" class="lupa">Search</a></li>
                 </ul>
             </div>
             <nav>

@@ -34,6 +34,17 @@ header{
 						background:url(../img/hamburguesa_b.svg) no-repeat 40px 30px / 32px auto;
 					}
 				}
+				.lupa{
+					display: block;
+					color: #FFF;
+					text-indent: -999rem;
+					background:url(../img/lupa.svg) no-repeat right 30px / 32px auto;
+					border-right: 40px solid transparent;
+					height: 100%;
+					&:hover{
+						background-image:url(../img/lupa_b.svg);
+					}
+				}
 			}
 		}
 	}
@@ -98,7 +109,7 @@ footer{
 				font-weight: 300;
 				&.correo{
 					padding-top: 24px;
-					a img{width: 80%; height: auto;}
+					a img{width: 55%; height: auto;}
 				}
 			}
 		}
@@ -113,7 +124,7 @@ footer{
 					@include ullimpio();
 					li{
 						a{
-							color: #808080;
+							color: #333;
 							font-size: 0.7rem;
 							font-weight: 300;
 						}
