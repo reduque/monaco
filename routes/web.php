@@ -33,5 +33,8 @@ Route::group(['middleware' => 'auth'], function () {
 	    Route::put('update_password/{id}', 'UserController@update_password')->name('update_password');
 	    Route::resource('usuarios', 'UserController');
 
+	    Route::get('banners_eliminar/{id}', 'BannerController@destroy')->name('banners_eliminar');
+	    Route::resource('banners', 'BannerController');
+
 	});
 });

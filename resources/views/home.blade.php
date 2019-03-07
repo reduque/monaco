@@ -44,9 +44,12 @@
             <div class="pasos">3</div>
             <p>Add oil to skillet, heat and sauté onions and yellow pepper paste until softened.</p>
             <div class="botones">
-                <center>
-                    <a href="">FULL VIEW</a><a href="">SEE MORE RECIPEES</a>
-                </center>
+                <div class="table">
+                    <div class="tr">
+                        <div class="td"><a class="a1" href="">FULL VIEW</a></div>
+                        <div class="td"><a class="a2" href="">SEE MORE RECIPEES</a></div>
+                    </div>
+                </div>
             </div>
             <!-- contenido dinámico -->
         </div>
@@ -55,10 +58,10 @@
     <section class="bloque5">
         <h2>Eating healthy Tip</h2>
         <p>It is said that the name Balsamic comes from the healing element balm, as it was believed that Balsamic <br>
-                Vinegar was a healing aid centuries ago. <br>
-                Balsamic Vinegar has antioxidants that improve<br> 
-                the immune system, guarding from free radicals that damage your cells.  It can also protect against <br>
-                heart disease and cancer.</p>
+        Vinegar was a healing aid centuries ago. <br>
+        Balsamic Vinegar has antioxidants that improve<br> 
+        the immune system, guarding from free radicals that damage your cells.  It can also protect against <br>
+        heart disease and cancer.</p>
     </section>
     <div class="pallax"></div>
 @endsection

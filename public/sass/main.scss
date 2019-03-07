@@ -61,6 +61,18 @@ form{margin:0; padding:0}
 	.noenmobile{display: none;}
 }
 
+.table{
+    display: table;
+    margin: 0 auto;
+    .tr{
+        display: table-row;
+        .td{
+            display: table-cell;
+            vertical-align: middle;
+        }
+    }
+}
+
 @import "_layout";
 @import "_home";
 

@@ -114,7 +114,9 @@
                 <div class="separador"></div>
             </div>
         </footer>
-        <div>a</div>
+        <div class="pie">
+            <a href="">TERMS & CONDITIONS</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="">PRIVACY STATEMENT</a>&nbsp;&nbsp;|&nbsp;&nbsp;©2017 MONACO FOODS INC. ALL RIGHTS RESERVED
+        </div>
     </div>
 
 
