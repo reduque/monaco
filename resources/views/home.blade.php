@@ -2,10 +2,6 @@
 
 @section('title','Home')
 
-@section('header')
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css"/>
-@endsection
 
 @section('content')
 
@@ -23,9 +19,9 @@
         <p>We offer an ample portfolio of premium<br>quality products, carefully selected to ensure<br>that each bite is beyond delicious.</p>
 
     </section>
-    <section class="slick banner_home2">
-        <a href=""><img src="uploads/banners/b1.png" alt=""></a>
-        <a href=""><img src="uploads/banners/b2.png" alt=""></a>
+    <section class="banner_home2">
+        <div class="contenedor"></div>
+        <ul class="dots"></ul>
     </section>
     <section class="bloque4">
         <h3>FROM OUR KITCHEN</h3>
@@ -67,7 +63,6 @@
 @endsection
 
 @section('javascript')
-    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
     <script>
     $(document).ready(function(){
         var mover_banner=true;
@@ -78,7 +73,6 @@
                 mover_banner=false;
                 $('.o').animate({top:48},1500,"easeOutCubic");
             }
-            //alert('tt');
             obj=$('.pallax');
 			mitop=obj.offset().top;
 			mialto=obj.height();
@@ -88,20 +82,56 @@
 				donde=(mitop-scrollTop-winh)*mialto/aa;
 				obj.css("background-position","center " + donde + "px");
 			}
-			
-
-        });
-
-        $('.slick').slick({
-            dots: false,
-            arrows: false,
-            infinite: true,
-            speed: 500,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            autoplay:true,
         });
     })
+    banners=[<?php
+    $u='';
+    foreach($banners as $banner){
+        echo $u . '{img:"' . $banner->img_en . '", link:"' . $banner->link . '"}';
+        $u=',';
+    }
+    ?>];
+    var t;
+    var ancho=$('.banner_home2').width();
+    var b_act=0;
+    var mover=true;
+    tot_banners=banners.length;
+    $(window).load(function() {
+        $('.contenedor').css("width", (tot_banners+1) * 1024);
+        banners.forEach(function(banner){
+            $('.contenedor').append('<a href="' + banner.link + '"><img src="uploads/banners/' + banner.img + '"></a>');
+            $('.dots').append('<li></li>');
+        });
+        banner=banners[0];
+        $('.contenedor').append('<a href="' + banner.link + '"><img src="uploads/banners/' + banner.img + '"></a>');
+        $('.dots li:nth-child(1)').addClass('activo');
+        t=setTimeout(mover_banner, 3000);
+    })
+    mover_banner=function(){
+        clearTimeout(t);
+        b_act++;
+        p=-b_act * ancho;
+        $('.dots li').removeClass('activo');
+        $('.contenedor').animate( {left: p },1500,"easeOutCubic", function(){
+            if(b_act>=tot_banners){
+                $('.contenedor').css('left',0);
+                b_act=0;
+            }
+            $('.dots li:nth-child(' + (b_act+1) + ')').addClass('activo');
+            if(mover) t=setTimeout(mover_banner, 3000);
+        });
+    }
+    $('.dots').on('click','li',function(){
+        clearTimeout(t);
+        b_act=$(this).index()-1;
+        mover_banner();
+    })
+    $('.banner_home2').mouseover(function(){
+        mover=false;
+        clearTimeout(t);
+    }).mouseleave(function(){
+        mover=true;
+        t=setTimeout(mover_banner, 1000);
+    })
 </script>
-
 @endsection

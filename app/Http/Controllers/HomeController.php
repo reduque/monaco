@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Banner;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        return view('home',['seccion' => 'home']);
+        $banners=Banner::inRandomOrder()->get();
+        return view('home',['seccion' => 'home', 'banners' => $banners]);
     }
 }
