@@ -4,7 +4,7 @@
 
 
 @section('content')
-
+    <div class="fondonegro"></div>
     <section class="home_cuote">
         <p>We serve tables around the world with fine foods that bring flavor and delight to many meals.</p>
     </section>
@@ -19,8 +19,8 @@
         <p>We offer an ample portfolio of premium<br>quality products, carefully selected to ensure<br>that each bite is beyond delicious.</p>
 
     </section>
-    <section class="banner_home2">
-        <div class="contenedor"></div>
+    <section class="banner_home_conteiner">
+        <div class="banner_home2"><div class="contenedor"></div></div>
         <ul class="dots"></ul>
     </section>
     <section class="bloque4">
@@ -64,6 +64,9 @@
 
 @section('javascript')
     <script>
+    var ancho=$('.banner_home2').width();
+    var b_act=0;
+
     $(document).ready(function(){
         var mover_banner=true;
         $(window).scroll(function(){
@@ -83,6 +86,18 @@
 				obj.css("background-position","center " + donde + "px");
 			}
         });
+        function ajustar(){
+            ancho=$('.banner_home2').width();
+            $('.banner_home2 .contenedor a img').css('width', ancho);
+            $('.banner_home2').css('height', 516 * ancho / 1024 );
+            p=-b_act * ancho;
+            $('.contenedor').css('left', p);
+        }
+        $(window).resize(function(){
+            ajustar();
+        })
+
+
     })
     banners=[<?php
     $u='';
@@ -92,8 +107,6 @@
     }
     ?>];
     var t;
-    var ancho=$('.banner_home2').width();
-    var b_act=0;
     var mover=true;
     tot_banners=banners.length;
     $(window).load(function() {

@@ -80,6 +80,20 @@ header{
 					}
 				}
 			}
+			@media only screen and (max-width:1008px){
+				padding-top: 18px;
+				li a{
+					font-size: 2.2rem;
+					line-height: 3rem;
+				}
+			}
+			@media only screen and (max-width:640px){
+				padding-top: 20px;
+				li a{
+					font-size: 2rem;
+					line-height: 2.8rem;
+				}
+			}
 		}
 	}
 }
@@ -94,7 +108,7 @@ footer{
 		height: 240px;
 		margin-bottom: 15px;
 		.floatd{
-			width: 380px;
+			width: 390px;
 			padding-top: 20px;
 			a.footer_reachus{
 				font-size: 5.15rem;
@@ -140,6 +154,49 @@ footer{
 					}
 				}
 
+			}
+		}
+	}
+	@media only screen and (max-width:1008px){
+		.footer2{
+			.floatd{
+				padding-top: 70px;
+			}
+		}
+	}
+	@media only screen and (max-width:860px){
+		.footer1{
+			background: none;
+			.floatd{
+				float: none;
+			}
+		}
+	}
+	@media only screen and (max-width:830px){
+		.footer2{
+			.floatd{
+				width: 100%;
+				padding-top: 50px;
+				div{
+					padding-top: 20px;
+					width: 33%;
+					ul li a{
+						font-size: 0.9rem;
+						&.dorado{
+							font-size: 1rem;
+						}
+					}
+				}
+			}
+		}
+	}
+	@media only screen and (max-width:640px){
+		.footer2{
+			.floatd{
+				div{
+					width: 45%;
+					//display: none;
+				}
 			}
 		}
 	}
