@@ -19,6 +19,7 @@ $color: #A08742;
 $color_vino: #6F003F;
 $color_azul: #006778;
 $fondo_crema: #EEE6DB;
+$gris: #808080;
 
 //reset
 
@@ -75,6 +76,7 @@ form{margin:0; padding:0}
 
 @import "_layout";
 @import "_home";
+@import "_our_story";
 
 a{
     @include transition(color, 500ms);

@@ -12,4 +12,9 @@ class HomeController extends Controller
         $banners=Banner::inRandomOrder()->get();
         return view('home',['seccion' => 'home', 'banners' => $banners]);
     }
+
+    public function our_story()
+    {
+        return view('our_story',['seccion' => 'our_story']);
+    }
 }

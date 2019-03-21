@@ -55,6 +55,7 @@ header{
 		background: #F8B627;
 		width: 50%;
 		display: none;
+		padding-bottom: 20px;
 		a.cerrar_hamburguesa{
 			text-indent: -999rem;
 			background: url(../img/hamburguesa_b.svg) no-repeat 40px 30px / 32px auto;
@@ -75,10 +76,16 @@ header{
 					font-size: 3.85rem;
 					line-height: 4.6rem;
 					display: block;
-					&:hover, &.activo{
+					&.activo{
 						color: #FFF;
 					}
+					&:hover{
+						color: #FFF!important;
+					}
 				}
+			}
+			&:hover li a.activo{
+				color: #000;
 			}
 			@media only screen and (max-width:1008px){
 				padding-top: 18px;
@@ -108,14 +115,14 @@ footer{
 		height: 240px;
 		margin-bottom: 15px;
 		.floatd{
-			width: 390px;
+			width: 372px;
 			padding-top: 20px;
 			a.footer_reachus{
-				font-size: 5.15rem;
+				font-size: 4.8rem;
 				font-family: $questa_granderegular;
 				line-height: 5.2rem;
 				&:hover{
-					color: $color;
+					color: $gris;
 				}
 			}
 			p{
@@ -137,9 +144,11 @@ footer{
 				ul{
 					@include ullimpio();
 					li{
+						font-size: 0.7rem;
 						a{
-							color: #333;
+							color: $gris;
 							font-size: 0.7rem;
+							line-height: 1rem;
 							font-weight: 300;
 						}
 						a.dorado{
@@ -147,13 +156,15 @@ footer{
 							font-family: $questa_granderegular;
 							font-size: 0.9rem;
 							font-weight: normal;
+							&:hover{
+								font-family: $roboto;
+							}
 						}
 						a:hover{
 							font-weight: bold;
 						}
 					}
 				}
-
 			}
 		}
 	}

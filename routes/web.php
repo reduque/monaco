@@ -20,6 +20,8 @@ Route::get('/contact/',function(){
 	echo 'mailto:sales@monacofoods.com';
 })->name('contact');
 
+Route::get('our-story/', 'HomeController@our_story')->name('our_story');
+
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('administracion','administracion\HomeController@index');

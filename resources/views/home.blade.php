@@ -118,11 +118,11 @@
         banner=banners[0];
         $('.contenedor').append('<a href="' + banner.link + '"><img src="uploads/banners/' + banner.img + '"></a>');
         $('.dots li:nth-child(1)').addClass('activo');
-        t=setTimeout(mover_banner, 3000);
+        t=setTimeout('f_mover_banner(1)', 3000);
     })
-    mover_banner=function(){
+    f_mover_banner=function(incremento){
         clearTimeout(t);
-        b_act++;
+        b_act+=incremento;
         p=-b_act * ancho;
         $('.dots li').removeClass('activo');
         $('.contenedor').animate( {left: p },1500,"easeOutCubic", function(){
@@ -131,20 +131,20 @@
                 b_act=0;
             }
             $('.dots li:nth-child(' + (b_act+1) + ')').addClass('activo');
-            if(mover) t=setTimeout(mover_banner, 3000);
+            if(mover) t=setTimeout('f_mover_banner(1)', 3000);
         });
     }
     $('.dots').on('click','li',function(){
         clearTimeout(t);
-        b_act=$(this).index()-1;
-        mover_banner();
+        b_act=$(this).index();
+        f_mover_banner(0);
     })
-    $('.banner_home2').mouseover(function(){
+    $('.banner_home2, .dots').mouseover(function(){
         mover=false;
         clearTimeout(t);
     }).mouseleave(function(){
         mover=true;
-        t=setTimeout(mover_banner, 1000);
+        t=setTimeout('f_mover_banner(1)', 1000);
     })
 </script>
 @endsection

@@ -123,21 +123,21 @@
     }
     ul{
         position: absolute;
-        bottom: -30px;
+        bottom: -35px;
         right: 40px;
+        height: 35px;
         @include ullimpio();
         li{
             text-indent: -999rem;
             float: left;
-            margin: 0 5px;
+            margin:14px 4px 0 4px;
             border: $color solid 2px;
             border-radius: 50%;
-            width: 12px;
-            height: 12px;
+            width: 10px;
+            height: 10px;
             cursor: pointer;
-            background: #333;
             &.activo{
-                background: $color_vino;
+                background: $color;
             }
         }
     }
@@ -158,9 +158,9 @@
     h2{
         color: $color;
         font-family: $questa_granderegular;
-        font-weight: normal;
         font-size: 3.85rem;
         margin: 24px 0 0px 0;
+        font-weight: 400;
     }
     p{
         color: $color;
@@ -222,6 +222,7 @@
         p{
             margin: 0 auto;
             font-size: 1.1rem;
+            font-weight: 300;
             width: 320px;
         }
         .botones{
@@ -242,6 +243,10 @@
                 }
                 &.a2{
                     font-size: 0.5625rem;
+                }
+                &:hover{
+                    color: #000;
+                    border: 1px solid #000;
                 }
             }
         }
@@ -267,6 +272,7 @@
     p{
         color: $color;
         font-size: 1.85rem;
+        line-height: 2.3125rem;
         font-weight: 300;
         margin-left: auto;
         margin-right: auto;
@@ -279,6 +285,7 @@
         }
         p{
             font-size: 1.2rem;
+            line-height: 1.5rem;
             width: 90%;
         }
     }
