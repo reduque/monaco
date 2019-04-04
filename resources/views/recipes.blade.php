@@ -20,7 +20,7 @@
 </section>
 <section class="recipes_body">
 @foreach ($category->recipes as $recipe)
-    <article>
+    <article id="rep_{{ $recipe->id }}">
         <div class="foto" style="background-image:url(uploads/recipes/{{ $recipe->picture }})"></div>
         <div class="contenido" style="background: #{{ $category->color }}">
             <h1>{{ $recipe->title_en }}</h1>
@@ -46,6 +46,10 @@
             $('.recipes_header .lista_r').animate({height: '180px'},500);
             $(this).fadeOut(250);
             $('.recipes_header .see_more').fadeIn(500);
+        })
+        $('.recipes_header .lista_r a').click(function(e){
+            e.preventDefault();
+            $('html,body').animate({scrollTop:$("#rep_" + $(this).data('id')).offset().top - 83},1000, "easeOutQuad");
         })
     })
 </script>
