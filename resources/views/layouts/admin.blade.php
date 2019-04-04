@@ -43,10 +43,15 @@
                         <a href="{{ route("usuarios.index") }}"><i class="fa fa-fw fa-user"></i> @lang('administracion.usuarios')</a>
                     </li>
                     <li>
-                        <a href="{{ route("banners.index") }}"><i class="fa fa-fw fa-pencil"></i> Banners</a>
+                        <a href="{{ route("banners.index") }}"><i class="fa fa-fw fa-pencil"></i> @lang('administracion.banners')</a>
                     </li>
-
-
+                    <li>
+                        <a href="{{ route("tips.index") }}"><i class="fa fa-fw fa-pencil"></i> @lang('administracion.tips')</a>
+                    </li>
+                    <li>
+                        <a href="{{ route("recipes.index") }}"><i class="fa fa-fw fa-pencil"></i> @lang('administracion.recipes')</a>
+                    </li>
+    
                     <li>
                         <a href="{{ route('logout') }}"><i class="fa fa-fw fa-sign-out"></i> @lang('administracion.salir')</a>
                     </li>

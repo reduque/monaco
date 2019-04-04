@@ -1,0 +1,183 @@
+.r_cat{
+    .bloque{
+        float: left;
+        width: 50%;
+        height: 516px;
+        a{
+            display: table;
+            height: 100%;
+            width: 100%;
+            text-align: center;
+            h2{
+                margin: 0;
+                color: #FFF;
+                font-family: $questa_granderegular;
+                font-weight: normal;
+                font-size: 4.3rem;
+                line-height: 4.8rem;
+                vertical-align: middle;
+                display: table-cell;
+                padding: 10%;
+            }
+            &:hover{
+                background:none!important;
+                h2{
+                    display: none;
+                }
+            }
+        }
+        &.tabla{
+            display: table;
+            background: $fondo_crema;
+            div{
+                vertical-align: middle;
+                display: table-cell;
+                text-align: center;
+                p{
+                    font-family: $questa_granderegular;
+                    margin: 0;
+                    color: $color;
+                    font-size: 1.77rem;
+                    line-height: 1.9375rem;
+                    padding-bottom: 10px;
+                    &:after{
+                        content: "";
+                        display: block;
+                        margin: 10px auto 0 auto;
+                        width: 34px;
+                        height: 1px;
+                        background: $color;
+                    }
+                    &:nth-child(3):after{
+                        background: $fondo_crema;
+                    }
+                }
+                span{
+                    color: $gris;
+                    font-size: 1.125rem;
+                    font-weight: 300;
+                }
+            }
+        }
+    }
+    @media only screen and (max-width:800px){
+        .bloque{
+            height: 400px;
+            a h2{
+                font-size: 3rem;
+                line-height: 3.35rem;
+            }
+            &.tabla{
+                div{
+                    p{
+                        font-size: 1.4rem;
+                        line-height: 1.532rem;
+                    }
+                    span{
+                        font-size: 0.89rem;
+                        font-weight: 300;
+                    }
+                }
+            }
+    
+        }
+    }
+}
+.recipes_header{
+    @extend %padding_interno;
+    background: #000 url(../img/o.svg) no-repeat;
+    background-size: 188px auto;
+    background-position: right 72px bottom -100px;
+    div.contenedor{
+        position: relative;
+    }
+    h1{
+        margin: 0;
+        font-size: 1.2rem;
+        color: #FFF;
+        line-height: 23px;
+        padding-bottom: 15px;
+        &:after{
+            content: "";
+            display: block;
+            background: #FFF;
+            height: 1px;
+            width: 36px;
+            margin-top: 15px;
+        }
+    }
+    div.lista_r{
+        overflow: hidden;
+        height: 180px;
+        margin-bottom: 15px;
+        a{
+            color: $color;
+            font-family: $questa_granderegular;
+            font-size: 1.85rem;
+            line-height: 36px;
+            &:hover{
+                font-weight: bold;
+            }
+        }
+    }
+    .see_more_contenedor{height: 20px;}
+    a.see_more{
+        color: $color;
+        font-weight: bold;
+        font-size: 0.7rem;
+        &:hover{
+            color: #FFF;
+        }
+    }
+}
+.recipes_body{
+    article{
+        clear: both;
+        .foto{
+            width: 50%;
+            height: 516px;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+        }
+        .contenido{
+            width: 50%;
+            height: 516px;
+            @extend %box-sizing;
+            @extend %padding_interno;
+            h1{
+                margin: 0;
+            }
+        }
+        &:nth-child(odd){
+            .foto{
+                float: right;
+            }
+            .contenido{
+                float: left;
+            }
+        }
+        &:nth-child(even){
+            .foto{
+                float: left;
+            }
+            .contenido{
+                float: right;
+            }
+        }
+    }
+}
+a.x{
+    position: absolute;
+    text-indent: -999rem;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 50px;
+    height: 50px;
+    background: url(../img/x.svg) no-repeat center center / 100% 100%;
+    display: none;
+    &:hover{
+        background-size: 200% 200%;
+    }
+}

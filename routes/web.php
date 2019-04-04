@@ -21,6 +21,12 @@ Route::get('/contact/',function(){
 })->name('contact');
 
 Route::get('our-story/', 'HomeController@our_story')->name('our_story');
+Route::get('divisions/', 'HomeController@divisions')->name('divisions');
+Route::get('reach-us/', 'HomeController@reach_us')->name('reach_us');
+Route::post('reach-us/', 'HomeController@reach_us_enviar')->name('reach_us_enviar');
+Route::get('eating-healthy-tips/', 'TipController@index')->name('tips');
+Route::get('the-kitchen/', 'RecipeController@index')->name('recipes');
+Route::get('the-kitchen/{slug}/', 'RecipeController@category')->name('recipes_category');
 
 
 Route::group(['middleware' => 'auth'], function () {
@@ -37,6 +43,12 @@ Route::group(['middleware' => 'auth'], function () {
 
 	    Route::get('banners_eliminar/{id}', 'BannerController@destroy')->name('banners_eliminar');
 	    Route::resource('banners', 'BannerController');
+
+	    Route::get('tips_eliminar/{id}', 'TipController@destroy')->name('tips_eliminar');
+	    Route::resource('tips', 'TipController');
+
+	    Route::get('recipes_eliminar/{id}', 'RecipeController@destroy')->name('recipes_eliminar');
+	    Route::resource('recipes', 'RecipeController');
 
 	});
 });

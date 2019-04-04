@@ -6,7 +6,7 @@
 @section('content')
     <div class="fondonegro"></div>
     <section class="home_cuote">
-        <p>We serve tables around the world with fine foods that bring flavor and delight to many meals.</p>
+        <p>We serve tables around the world with fine foods that bring flavor and delight to many meals</p>
     </section>
     <section class="banner_home1">
         <div class="o"></div>
@@ -16,7 +16,7 @@
         <div class="latas"></div>
         <h1>Welcome</h1>
         <p><b>OUR FEATURED PRODUCTS</b></p>
-        <p>We offer an ample portfolio of premium<br>quality products, carefully selected to ensure<br>that each bite is beyond delicious.</p>
+        <p>We offer an ample portfolio of premium<br>quality products, carefully selected to ensure<br>that each bite is beyond delicious</p>
 
     </section>
     <section class="banner_home_conteiner">

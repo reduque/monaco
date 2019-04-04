@@ -37,10 +37,10 @@
                     <li><a @if($seccion=='home') class="activo" @endif href="{{ route('home') }}">Home</a></li>
                     <li><a @if($seccion=='our_story') class="activo" @endif href="{{ route('our_story') }}">Our Story</a></li>
                     <li><a href="">Products</a></li>
-                    <li><a href="">Divisions</a></li>
-                    <li><a href="">Eating Healthy</a></li>
-                    <li><a href="">The Kitchen</a></li>
-                    <li><a href="">Reach Us</a></li>
+                    <li><a @if($seccion=='divisions') class="activo" @endif href="{{ route('divisions') }}">Divisions</a></li>
+                    <li><a @if($seccion=='tips') class="activo" @endif href="{{ route('tips') }}">Eating Healthy</a></li>
+                    <li><a @if($seccion=='recipes') class="activo" @endif href="{{ route('recipes') }}">The Kitchen</a></li>
+                    <li><a @if($seccion=='reach_us') class="activo" @endif href="{{ route('reach_us') }}">Reach Us</a></li>
                 </ul>
             </nav>
         </header>
@@ -48,13 +48,11 @@
             @yield('content')
         </main>
         <footer>
-            <div class="footer1">
-                <div class="floatd">
-                    <a href="#" class="footer_reachus">Reach Us</a>
-                    <p>1120 NW 165th Street, Miami, FL 33169<br>T  954  580 4400</p>
-                    <p class="correo"><a href="#"><img src="img/email.gif" alt="Contact us"></a></p>
-                </div>
-            </div>
+        @if($seccion <> 'reach_us')
+            @include('partials._footer')
+        @else
+            <div class="footer_ru"></div>
+        @endif
             <div class="footer2">
                 <div class="floatd">
                     <div>

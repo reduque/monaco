@@ -19,10 +19,13 @@ return [
     'confirmar_eliminar' => '¿Está seguro de eliminar este registro?',
     'volver_lista' => 'Volver a la lista',
     'guardar' => 'Guardar',
-    'gadado_exito' => 'Se ha guardado correctamente su información',
+    'grabado_exito' => 'Se ha guardado correctamente su información',
     'error_eliminando' => 'Se ha producido un error, es probable que exista contenido relacionado a este registro que impide que se elimine',
     
 //paginas
     'usuarios' => 'Usuarios',
     'banners' => 'Banners',
+    'tips' => 'Tips',
+    'recipes' => 'Recetas',
+    'category' => 'Categoría',
 ];

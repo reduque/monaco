@@ -1,0 +1,72 @@
+.tips{
+    .banner{
+        background: url(../img/tips.jpg) no-repeat center 0 / auto 100%;
+        height: 516px;
+        h1{
+            margin: 0;
+            padding: 20px 0 0 9.1796875%;
+            color: $color_azul;
+            font-family: $questa_granderegular;
+            font-weight: normal;
+            font-size: 4.109375rem;
+            line-height: 4.305rem;        }
+    }
+    .contenedor{
+        background: $fondo_crema url(../img/fondo_tips.gif) repeat-y center 0;
+        border-bottom: 6px solid #fff;
+        div.floati , div.floatd{
+            @extend %box-sizing;
+            width: 50%;
+        }
+        div.floati{
+            border-right: 3px solid #fff;
+        }
+        div.floatd{
+            border-left: 3px solid #fff;
+        }
+        article{
+            padding: 32px 7.073%;
+            border-top: 6px solid #fff;
+            .step{
+                float: left;
+                width: 23.5%;
+                font-family: $questa_granderegular;
+                font-size: 5.465rem;
+                line-height: 2rem;
+                color: $color;
+                @media only screen and (max-width:960px){
+                    font-size: 4.5rem;
+                }
+            }
+            p{
+                float: left;
+                width: 76.5%;
+                margin: 0;
+                font-size: 1.4375rem;
+                line-height: 1.570625rem;
+                font-weight: 300;
+                color: $gris;
+                span{
+                    display: block;
+                    padding-top: 5px;
+                    font-size: 0.8125rem;
+                    color: $gris;
+                    font-style: italic;
+                }
+            }
+        }
+    }
+    @media only screen and (max-width:900px){
+        .banner h1{
+            font-size: 3.08203125rem;
+            line-height: 3.22875rem;
+        }
+        .contenedor{
+            background-image: none;
+            div.floati , div.floatd{
+                width: 100%;
+                border: none; 
+            }
+        }
+    }
+}

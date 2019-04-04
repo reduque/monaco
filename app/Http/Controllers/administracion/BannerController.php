@@ -41,7 +41,7 @@ class BannerController extends Controller
                 'link' => $request->link,
                 'img_en' => $fileName,
             ]);
-            return redirect()->route('banners.edit', codifica($banner->id))->with("notificacion", __('administracion.gadado_exito') );
+            return redirect()->route('banners.edit', codifica($banner->id))->with("notificacion", __('administracion.grabado_exito') );
 
         } catch (Exception $e) {
             \Log::info('Error creating item: '.$e);
@@ -87,7 +87,7 @@ class BannerController extends Controller
                 'link' => $request->link,
                 'img_en' => $fileName,
             ]);
-            return redirect()->route('banners.edit', codifica($id))->with("notificacion", __('administracion.gadado_exito') );
+            return redirect()->route('banners.edit', codifica($id))->with("notificacion", __('administracion.grabado_exito') );
 
         } catch (Exception $e) {
             \Log::info('Error creating item: '.$e);

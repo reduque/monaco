@@ -66,7 +66,7 @@ header{
 			height: 100%;
 		}
 		ul{
-			@include ullimpio();
+			@extend %ullimpio;
 			padding: 16px 0;
 			li{
 				padding-left: 80px;
@@ -106,7 +106,7 @@ header{
 }
 
 footer{
-	padding: 48px 94px;
+	@extend %padding_interno;
 	background: $fondo_crema;
 	.footer1{
 		*{color: $color;}
@@ -135,6 +135,11 @@ footer{
 			}
 		}
 	}
+	.footer_ru{
+		border-bottom: 1px solid #000;
+		margin-bottom: 15px;
+		clear: both;
+	}
 	.footer2{
 		background: url(../img/logo_negro.svg) no-repeat 0 0 / 163px auto;
 		.floatd{
@@ -142,7 +147,7 @@ footer{
 				float: left;
 				width: 124px;
 				ul{
-					@include ullimpio();
+					@extend %ullimpio;
 					li{
 						font-size: 0.7rem;
 						a{

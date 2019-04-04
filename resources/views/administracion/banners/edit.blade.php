@@ -11,8 +11,7 @@
     </div>
     <div class="col-lg-12">
         <ol class="breadcrumb">
-            <li><a href="{{ route('administracion_home') }}"><i class="fa fa-dashboard"></i> 
-@lang('administracion.inicio')</a></li>
+            <li><a href="{{ route('administracion_home') }}"><i class="fa fa-dashboard"></i> @lang('administracion.inicio')</a></li>
             <li><a href="{{ route('banners.index') }}"><i class="fa fa-fw fa-pencil"></i> @lang('administracion.banners')</a></li>
             <li>Editar</li>
         </ol>

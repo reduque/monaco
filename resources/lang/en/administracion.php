@@ -19,11 +19,13 @@ return [
     'confirmar_eliminar' => 'Are you sure you want to delete this item?',
     'volver_lista' => 'Back to the list',
     'guardar' => 'Save',
-    'gadado_exito' => 'Your information has been saved correctly',
+    'grabado_exito' => 'Your information has been saved correctly',
     'error_eliminando' => 'An error has occurred, there is likely to be content related to this record that prevents it from being deleted',
 
 //paginas
     'usuarios' => 'Users',
     'banners' => 'Banners',
-
+    'tips' => 'Tips',
+    'recipes' => 'Recipes',
+    'category' => 'Category',
 ];
