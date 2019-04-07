@@ -83,6 +83,8 @@
         }
     }
 }
+
+
 .recipes_header{
     @extend %padding_interno;
     background: #000 url(../img/o.svg) no-repeat;
@@ -116,37 +118,107 @@
             font-size: 1.85rem;
             line-height: 36px;
             &:hover{
+                font-family: $roboto;
                 font-weight: bold;
             }
         }
     }
-    .see_more_contenedor{height: 20px;}
-    a.see_more{
-        color: $color;
-        font-weight: bold;
-        font-size: 0.7rem;
-        &:hover{
-            color: #FFF;
-        }
+    @media only screen and (max-width:800px){
+        background-size: 90px auto;
+        background-position: right 40px bottom -50px;
     }
 }
 .recipes_body{
     article{
-        clear: both;
+        position: relative;
+        .ancla{
+            position: absolute;
+            top: -83px;
+        }
         .foto{
             width: 50%;
             height: 516px;
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
+            &.invisible{
+                display: none;
+            }
+        }
+        h2{
+            margin: 0;
+            font-size: 1.2rem;
+            line-height: 1.419375rem;
+        }
+        .palito{
+            background: #000;
+            width: 36px;
+            height: 1px;
+            margin: 10px 0 15px 0;
+        }
+        .ingredientes{
+            font-size: 1.1rem;
+            line-height: 22px;
+        }
+        .textos{
+            overflow: hidden;
         }
         .contenido{
             width: 50%;
             height: 516px;
             @extend %box-sizing;
             @extend %padding_interno;
+            position: relative;
             h1{
-                margin: 0;
+                margin: 0 0 30px 0;
+                color: #FFF;
+                font-family: $questa_granderegular;
+                font-weight: normal;
+                font-size: 2.77875rem;
+                line-height: 2.84625rem;
+            }
+            .textos{
+                height: 154px;
+            }
+            .see_more_contenedor{margin-top: 20px;}
+            .see_more{color: #000;}
+            .info{
+                height: 30px;
+                padding: 0 10px;
+                min-width: 200px;
+                border: 1px solid #fff;
+                position: absolute;
+                bottom: 48px;
+                color: #FFF;
+                font-size: 0.9rem;
+                line-height: 30px;
+                b{
+                    color: #FFF;
+                }
+            }
+            &.izquierda{
+                float: left!important;
+            }
+        }
+        .mas_info{
+            height: 516px;
+            @extend %box-sizing;
+            @extend %padding_interno;
+            overflow: hidden;
+            width: 50%;
+            display: none;
+            float: right;
+            &.visible{
+                display: block;
+            }
+            .mas_info2{position: relative; padding-top: 60px;}
+            .textos{
+                .ingredientes{
+                    margin-top: -154px;
+                }
+            }
+            .x{
+                display: block;
             }
         }
         &:nth-child(odd){
@@ -165,8 +237,74 @@
                 float: right;
             }
         }
+        .indicaciones{
+            clear: both;
+            @extend %padding_interno;
+            ul{
+                @extend %ullimpio;
+                li{
+                    padding-left: 16px;
+                    color: $color;
+                    font-size: 1.6rem;
+                    line-height: 2.05rem;
+                    font-weight: 300;
+                    &.cb{
+                        background: url(../img/bulet.gif) no-repeat 0 13px / 5px 5px;
+                    }
+                    b{
+                        color: $color;
+                    }
+                }
+            }
+            .subir{
+                height: 25px;
+                display: block;
+                background: url(../img/subir.svg) no-repeat right 0 / auto 100%;
+                text-indent: -999rem;
+                margin-top: -10px;
+            }
+        }
+        @media only screen and (max-width:900px){
+            .mas_info{
+                display: none!important;
+            }
+            .foto{
+                float: none;
+                width: 100%;
+                height: 400px;
+                display: block!important;
+            }
+            .contenido{
+                float: none;
+                width: 100%;
+                height: auto;
+                .textos{
+                    height: auto;
+                    margin-bottom: 50px;
+                }
+                .see_more{
+                    display: none!important;
+                }
+            }
+        }
     }
 }
+
+
+.see_more_contenedor{height: 20px;}
+a.see_more{
+    color: $color;
+    font-weight: bold;
+    font-size: 0.7rem;
+    &:hover{
+        color: #FFF!important;
+    }
+    &.invisible{
+        display: none;
+    }
+}
+
+
 a.x{
     position: absolute;
     text-indent: -999rem;

@@ -86,7 +86,7 @@ form{margin:0; padding:0}
 @import "_tips";
 @import "_recipes";
 a{
-    @include transition(color 500ms, background-color 500ms, font-weight 500ms);
+    @include transition(color 500ms, background-color 500ms);
 }
 .has-error{
     color: $color_vino!important;

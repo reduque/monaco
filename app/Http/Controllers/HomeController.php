@@ -4,13 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Banner;
+use App\Tip;
+use App\Recipe;
 
 class HomeController extends Controller
 {
     public function index()
     {
         $banners=Banner::inRandomOrder()->get();
-        return view('home',['seccion' => 'home', 'banners' => $banners]);
+        $tip=Tip::inRandomOrder()->first();
+        $recipe=Recipe::inRandomOrder()->first();
+        return view('home',['seccion' => 'home', 'banners' => $banners, 'tip' => $tip, 'recipe' => $recipe]);
     }
 
     public function our_story()

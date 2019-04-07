@@ -38,8 +38,7 @@
                 line-height: 30px;
                 font-size: 0.9rem;
                 &:hover{
-                    color: #000;
-                    border: 1px solid #000;
+                    font-weight: bold;
                 }
             }
             @media only screen and (max-width:900px){

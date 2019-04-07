@@ -111,7 +111,7 @@ footer{
 	.footer1{
 		*{color: $color;}
 		background: url(../img/footer.jpg) no-repeat 0 0 / 275px auto;
-		border-bottom: 1px solid #000;
+		border-bottom: 1px solid #666;
 		height: 240px;
 		margin-bottom: 15px;
 		.floatd{
@@ -136,7 +136,7 @@ footer{
 		}
 	}
 	.footer_ru{
-		border-bottom: 1px solid #000;
+		border-bottom: 1px solid #666;
 		margin-bottom: 15px;
 		clear: both;
 	}
@@ -211,7 +211,19 @@ footer{
 			.floatd{
 				div{
 					width: 45%;
-					//display: none;
+					ul{
+						li{
+							font-size: 0.7rem;
+							a{
+								font-size: 1.125rem;
+								line-height: 1.4375rem;
+							}
+							a.dorado{
+								font-size: 1.25rem;
+							}
+						}
+					}
+	
 				}
 			}
 		}
@@ -219,11 +231,14 @@ footer{
 }
 .pie{
 	background: $color;
-	padding: 0 94px;
+	padding: 0 7.03125%;
 	&, & *{
 		line-height: 25px;
 		color: #FFF;
 		font-size: 0.5rem;
 		font-weight: 300;
+		@media only screen and (max-width:640px){
+			font-size: 0.35rem;
+		}
 	}
 }

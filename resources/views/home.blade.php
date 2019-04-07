@@ -31,33 +31,29 @@
     <section class="receta_home">
         <div class="textos bloque">
             <h2>THIS WEEK’S RECIPE</h2>
-            <!-- contenido dinámico -->
-            <h3>Quinoa Veggie Burgers</h3>
-            <div class="pasos">1</div>
-            <p>Chop your mushrooms in a food processor and reserve. </p>
-            <div class="pasos">2</div>
-            <p>Process the zucchini and dry excess liquid with paper towels and add to mushrooms</p>
-            <div class="pasos">3</div>
-            <p>Add oil to skillet, heat and sauté onions and yellow pepper paste until softened.</p>
+            <h3>{{ $recipe->title_en }}</h3>
+            <div class="contenido"><?php
+            $paso=0;
+            foreach (explode("\n", $recipe->directions_en) as $line) {
+                if (trim($line)) {
+                    $paso++;
+                    ?><div class="pasos elementos">{{ $paso }}</div><p class="line elementos">{!! $line !!}</p><?php
+                }
+            }?></div>
             <div class="botones">
                 <div class="table">
                     <div class="tr">
-                        <div class="td"><a class="a1" href="">FULL VIEW</a></div>
-                        <div class="td"><a class="a2" href="">SEE MORE RECIPEES</a></div>
+                        <div class="td"><a class="a1" href="{{ route('recipes_category',$recipe->category->slug_en) }}#rep_{{ $recipe->id }}">FULL VIEW</a></div>
+                        <div class="td"><a class="a2" href="{{ route('recipes') }}">SEE MORE RECIPEES</a></div>
                     </div>
                 </div>
             </div>
-            <!-- contenido dinámico -->
         </div>
-        <div class="imagen bloque" style="background-image: url(uploads/recetas/r1.jpg)"></div>
+        <div class="imagen bloque" style="background-image: url(uploads/recipes/{{ $recipe->picture }})"></div>
     </section>
     <section class="bloque5">
         <h2>Eating healthy Tip</h2>
-        <p>It is said that the name Balsamic comes from the healing element balm, as it was believed that Balsamic <br>
-        Vinegar was a healing aid centuries ago. <br>
-        Balsamic Vinegar has antioxidants that improve<br> 
-        the immune system, guarding from free radicals that damage your cells.  It can also protect against <br>
-        heart disease and cancer.</p>
+        <p>{!! nl2br($tip->tip_en) !!}</p>
     </section>
     <div class="pallax"></div>
 @endsection
@@ -86,19 +82,52 @@
 				obj.css("background-position","center " + donde + "px");
 			}
         });
-        function ajustar(){
-            ancho=$('.banner_home2').width();
-            $('.banner_home2 .contenedor a img').css('width', ancho);
-            $('.banner_home2').css('height', 516 * ancho / 1024 );
-            p=-b_act * ancho;
-            $('.contenedor').css('left', p);
-        }
         $(window).resize(function(){
             ajustar();
         })
-
-
+        ajustar();
     })
+    function ajustar(){
+        ancho=$('.banner_home2').width();
+        $('.banner_home2 .contenedor a img').css('width', ancho);
+        $('.banner_home2').css('height', 516 * ancho / 1024 );
+        p=-b_act * ancho;
+        $('.contenedor').css('left', p);
+        cont_top=$('.contenido').offset().top;
+        mas=false;
+        alto=0;
+        alto_texto=285;
+        alti_linea=21;
+        if(ancho<=783){
+            alto_texto=400;
+            alti_linea=23;
+        }
+        $('.elementos').each(function(){
+
+            if( $(this).offset().top + $(this).height() - cont_top > alto_texto ){
+                if(!mas){
+                    if( $(this).hasClass('line') ){
+                        alto=$('.contenido').height();
+                        if(alto_texto-alto>alti_linea){
+                            alto+=alti_linea;
+                            $('.contenido').css('height', alto);
+                        }
+                    }
+                }
+                mas=true;
+            }else{
+                alto=$(this).offset().top + $(this).height() - cont_top - 2;
+                $('.contenido').css('height', alto);
+            }
+        })
+        if(mas){
+            $('.textos').addClass('mas');
+        }else{
+            $('.textos').removeClass('mas');
+        }
+    }
+
+
     banners=[<?php
     $u='';
     foreach($banners as $banner){
@@ -119,6 +148,7 @@
         $('.contenedor').append('<a href="' + banner.link + '"><img src="uploads/banners/' + banner.img + '"></a>');
         $('.dots li:nth-child(1)').addClass('activo');
         t=setTimeout('f_mover_banner(1)', 3000);
+        ajustar();
     })
     f_mover_banner=function(incremento){
         clearTimeout(t);
