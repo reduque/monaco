@@ -36,9 +36,11 @@ class BannerController extends Controller
             if($request->img_en){
                 $fileName = $this->saveFile($request->img_en, 'banners/',(string)(date("YmdHis")) . (string)(rand(1,9)));
             }
+            $active = ($request->active == 1) ? 1 : 0 ;
             $banner=Banner::create([
                 'title_en' => $request->title_en,
                 'link' => $request->link,
+                'active' => $active,
                 'img_en' => $fileName,
             ]);
             return redirect()->route('banners.edit', codifica($banner->id))->with("notificacion", __('administracion.grabado_exito') );
@@ -82,9 +84,11 @@ class BannerController extends Controller
                     $this->deleteFile('banners/' . $fileName);
                 $fileName = $this->saveFile($request->img_en, 'banners/',(string)(date("YmdHis")) . (string)(rand(1,9)));
             }
+            $active = ($request->active == 1) ? 1 : 0 ;
             $banner->update([
                 'title_en' => $request->title_en,
                 'link' => $request->link,
+                'active' => $active,
                 'img_en' => $fileName,
             ]);
             return redirect()->route('banners.edit', codifica($id))->with("notificacion", __('administracion.grabado_exito') );

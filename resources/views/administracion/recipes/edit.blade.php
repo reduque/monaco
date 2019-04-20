@@ -59,13 +59,13 @@
         <div class="col-lg-6">
             <div class="form-group">
                 <label>Ingredients</label>
-                <textarea class="form-control" name="ingredients_en" rows="6">{{ old('ingredients_en',$recipe->ingredients_en) }}</textarea>
+                <textarea class="form-control" name="ingredients_en" rows="8">{{ old('ingredients_en',$recipe->ingredients_en) }}</textarea>
             </div>
         </div>
         <div class="col-lg-6">
             <div class="form-group">
                 <label>Directions</label>
-                <textarea class="form-control" name="directions_en" rows="6">{{ old('directions_en',$recipe->directions_en) }}</textarea>
+                <textarea class="form-control" name="directions_en" rows="8">{{ old('directions_en',$recipe->directions_en) }}</textarea>
             </div>
         </div>
     </div>
@@ -91,7 +91,7 @@
         <div class="col-lg-3">
             <div class="form-group">
                 <label>Time</label>
-                <input type="text" class="form-control" name="time_en" value="{{ old('time_en',$recipe->time_en) }}" maxlength="10">
+                <input type="text" class="form-control" name="time_en" value="{{ old('time_en',$recipe->time_en) }}" maxlength="20">
             </div>
         </div>
     </div>

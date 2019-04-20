@@ -17,12 +17,12 @@
             h2{
                 margin: 0;
                 font-family: $questa_granderegular;
-                font-size: 3.8125rem;
+                font-size: 61px;
                 font-weight: normal;
             }
             p{
-                font-size: 1.6rem;
-                line-height: 2rem;
+                font-size: 26px;
+                line-height: 32px;
                 font-weight: 300;
                 color: #F0E8DD;
             }
@@ -36,23 +36,23 @@
                 text-align: center;
                 display: inline-block;
                 line-height: 30px;
-                font-size: 0.9rem;
+                font-size: 14px;
                 &:hover{
                     font-weight: bold;
                 }
             }
             @media only screen and (max-width:900px){
                 h2{
-                    font-size: 3rem;
+                    font-size: 48px;
                 }
                 p{
-                    font-size: 1.3rem;
-                    line-height: 1.625rem;
+                    font-size: 23px;
+                    line-height: 26px;
                 }
             }
             @media only screen and (max-width:700px){
                 h2{
-                    font-size: 2.6rem;
+                    font-size: 42px;
                 }
             }
         

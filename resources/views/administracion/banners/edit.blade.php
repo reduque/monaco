@@ -66,8 +66,11 @@
         </div>
         <div class="col-lg-6">
             <div class="form-group">
+                <div class="form-group">
+                    <input type="checkbox" class="" name="active" id="a_a" value="1" @if(old('active', $banner->active)==1) checked @endif >&nbsp;&nbsp;<label for="a_a">Active</label>
+                </div>
                 @if($banner->img_en<>'')
-                    <img src="uploads/banners/{{ $banner->img_en }}" style="max-width:100%">
+                    <p><img src="uploads/banners/{{ $banner->img_en }}" style="max-width:100%"></p>
                 @endif
             </div>
         </div>

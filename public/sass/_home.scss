@@ -10,8 +10,8 @@
     position: relative;
     p{
         color: $color;
-        font-size: 3.85rem;
-        line-height: 4.6rem;
+        font-size: 62px;
+        line-height: 74px;
         margin: 0;
         padding: 4% 11% 6% 11%;
         text-align: center;
@@ -20,14 +20,14 @@
             content: '';
             display: inline-block;
             width: 40px;
-            height: 2.8rem;
+            height: 45px;
             background: url(../img/comillas1.svg) no-repeat 0 0 / 26px auto;
         }
         &:after{
             content: '';
             display: inline-block;
             width: 53px;
-            height: 2.8rem;
+            height: 45px;
             background: url(../img/comillas2.svg) no-repeat right 0 / 37px auto;
         }
     }
@@ -69,7 +69,7 @@
     h1{
         margin: 0;
         text-align: right;
-        font-size: 5rem;
+        font-size: 80px;
         color: $color_vino;
         font-family: $questa_granderegular;
         font-weight: normal;
@@ -78,14 +78,14 @@
     p{
         text-align: center;
         color: $color;
-        font-size: 1.85rem;
+        font-size: 30px;
         font-weight: 300;
-        line-height: 2.35rem;
+        line-height: 38px;
         margin: 16px 0;
         b{
             color: $color;
             font-weight: 900;
-            font-size: 1.6rem;
+            font-size: 26px;
             letter-spacing: 3px;
         }
     }
@@ -95,7 +95,7 @@
             padding: 200px 0 20px 0;
         }
         p{
-            font-size: 1.2rem;
+            font-size: 21px;
         }
     }
 }
@@ -127,7 +127,7 @@
         height: 35px;
         @extend %ullimpio;
         li{
-            text-indent: -999rem;
+            text-indent: -999px;
             float: left;
             margin:14px 4px 0 4px;
             border: $color solid 2px;
@@ -150,35 +150,35 @@
     h3{
         color: #FFF;
         font-weight: 900;
-        font-size: 1.6rem;
+        font-size: 26px;
         margin: 0;
         letter-spacing: 5px;
     }
     h2{
         color: $color;
         font-family: $questa_granderegular;
-        font-size: 3.85rem;
+        font-size: 62px;
         margin: 24px 0 0px 0;
         font-weight: 400;
     }
     p{
         color: $color;
         font-weight: 300;
-        font-size: 1.85rem;
+        font-size: 30px;
         margin: 2px 0 8px 0;
     }
     @media only screen and (max-width:900px){
         h2{
-            font-size: 3.3rem;
+            font-size: 53px;
         }
     }
     @media only screen and (max-width:800px){
         padding-top: 60px;
         h2{
-            font-size: 2.7rem;
+            font-size: 43px;
         }
         p{
-            font-size: 1.7rem;
+            font-size: 27px;
         }
     }
 }
@@ -196,14 +196,14 @@
         h2{
             margin: 0;
             padding-top: 40px;
-            font-size: 1rem;
+            font-size: 16px;
             font-weight: 900;
             letter-spacing: 3px;
         }
         h3{
             color: #FFF;
             font-family: $questa_granderegular;
-            font-size: 2.5rem;
+            font-size: 40px;
             margin: 0;
             padding:0 20px 10px 20px;
             font-weight: normal;
@@ -220,15 +220,15 @@
                 border-top: 1px solid #000;
                 margin: 10px auto 0 auto;
                 padding-top: 3px;
-                font-size: 1.1rem;
-                line-height: 1.6rem;
+                font-size: 18px;
+                line-height: 26px;
                 font-weight: bold;
             }
             p{
                 margin: 0 auto;
                 padding: 0;
-                font-size: 1.1rem;
-                line-height: 1.3125rem;
+                font-size: 18px;
+                line-height: 21px;
                 font-weight: 300;
                 width: 320px;
                 max-width: 88%;
@@ -248,10 +248,10 @@
                 line-height: 30px;
                 margin: 0 5px;
                 &.a1{
-                    font-size: 0.875rem;
+                    font-size: 14px;
                 }
                 &.a2{
-                    font-size: 0.5625rem;
+                    font-size: 9px;
                 }
                 &:hover{
                     font-weight: bold;
@@ -276,21 +276,21 @@
         }
         .textos{
             h2{
-                font-size: 1.25rem;
+                font-size: 20px;
             }
             h3{
-                font-size: 3rem;
-                line-height: 3.24625rem;
+                font-size: 48px;
+                line-height: 52px;
             }
             .contenido{
                 p{
-                    font-size: 1.4375rem;
-                    line-height: 1.7152rem;
+                    font-size: 23px;
+                    line-height: 27px;
                     width: 78%;
                 }
                 .pasos{
-                    font-size: 1.4375rem;
-                    line-height: 1.4225rem;
+                    font-size: 23px;
+                    line-height: 23px;
                     margin-top: 13px;
                     padding-top: 5px;
     
@@ -309,15 +309,15 @@
     h2{
         margin: 0;
         color: $color_azul;
-        font-size: 3.85rem;
+        font-size: 62px;
         font-weight: normal;
         font-family: $questa_granderegular;
 
     }
     p{
         color: $color;
-        font-size: 1.85rem;
-        line-height: 2.3125rem;
+        font-size: 30px;
+        line-height: 37px;
         font-weight: 300;
         margin-left: auto;
         margin-right: auto;
@@ -326,11 +326,11 @@
     }
     @media only screen and (max-width:640px){
         h2{
-            font-size: 3rem;
+            font-size: 48px;
         }
         p{
-            font-size: 1.2rem;
-            line-height: 1.5rem;
+            font-size: 21px;
+            line-height: 24px;
             width: 90%;
         }
     }

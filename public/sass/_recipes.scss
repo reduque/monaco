@@ -13,8 +13,8 @@
                 color: #FFF;
                 font-family: $questa_granderegular;
                 font-weight: normal;
-                font-size: 4.3rem;
-                line-height: 4.8rem;
+                font-size: 69px;
+                line-height: 77px;
                 vertical-align: middle;
                 display: table-cell;
                 padding: 10%;
@@ -37,8 +37,8 @@
                     font-family: $questa_granderegular;
                     margin: 0;
                     color: $color;
-                    font-size: 1.77rem;
-                    line-height: 1.9375rem;
+                    font-size: 28px;
+                    line-height: 31px;
                     padding-bottom: 10px;
                     &:after{
                         content: "";
@@ -54,7 +54,7 @@
                 }
                 span{
                     color: $gris;
-                    font-size: 1.125rem;
+                    font-size: 18px;
                     font-weight: 300;
                 }
             }
@@ -64,17 +64,17 @@
         .bloque{
             height: 400px;
             a h2{
-                font-size: 3rem;
-                line-height: 3.35rem;
+                font-size: 48px;
+                line-height: 53px;
             }
             &.tabla{
                 div{
                     p{
-                        font-size: 1.4rem;
-                        line-height: 1.532rem;
+                        font-size: 22px;
+                        line-height: 25px;
                     }
                     span{
-                        font-size: 0.89rem;
+                        font-size: 14px;
                         font-weight: 300;
                     }
                 }
@@ -95,7 +95,7 @@
     }
     h1{
         margin: 0;
-        font-size: 1.2rem;
+        font-size: 21px;
         color: #FFF;
         line-height: 23px;
         padding-bottom: 15px;
@@ -115,7 +115,7 @@
         a{
             color: $color;
             font-family: $questa_granderegular;
-            font-size: 1.85rem;
+            font-size: 30px;
             line-height: 36px;
             &:hover{
                 font-family: $roboto;
@@ -147,8 +147,8 @@
         }
         h2{
             margin: 0;
-            font-size: 1.2rem;
-            line-height: 1.419375rem;
+            font-size: 21px;
+            line-height: 23px;
         }
         .palito{
             background: #000;
@@ -157,7 +157,7 @@
             margin: 10px 0 15px 0;
         }
         .ingredientes{
-            font-size: 1.1rem;
+            font-size: 18px;
             line-height: 22px;
         }
         .textos{
@@ -174,8 +174,8 @@
                 color: #FFF;
                 font-family: $questa_granderegular;
                 font-weight: normal;
-                font-size: 2.77875rem;
-                line-height: 2.84625rem;
+                font-size: 44px;
+                line-height: 46px;
             }
             .textos{
                 height: 154px;
@@ -190,7 +190,7 @@
                 position: absolute;
                 bottom: 48px;
                 color: #FFF;
-                font-size: 0.9rem;
+                font-size: 14px;
                 line-height: 30px;
                 b{
                     color: #FFF;
@@ -245,8 +245,8 @@
                 li{
                     padding-left: 16px;
                     color: $color;
-                    font-size: 1.6rem;
-                    line-height: 2.05rem;
+                    font-size: 26px;
+                    line-height: 33px;
                     font-weight: 300;
                     &.cb{
                         background: url(../img/bulet.gif) no-repeat 0 13px / 5px 5px;
@@ -260,7 +260,7 @@
                 height: 25px;
                 display: block;
                 background: url(../img/subir.svg) no-repeat right 0 / auto 100%;
-                text-indent: -999rem;
+                text-indent: -999px;
                 margin-top: -10px;
             }
         }
@@ -295,7 +295,7 @@
 a.see_more{
     color: $color;
     font-weight: bold;
-    font-size: 0.7rem;
+    font-size: 11px;
     &:hover{
         color: #FFF!important;
     }
@@ -307,7 +307,7 @@ a.see_more{
 
 a.x{
     position: absolute;
-    text-indent: -999rem;
+    text-indent: -999px;
     top: 0;
     right: 0;
     display: block;

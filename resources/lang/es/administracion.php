@@ -28,4 +28,5 @@ return [
     'tips' => 'Tips',
     'recipes' => 'Recetas',
     'category' => 'Categoría',
+    'banners_brands' => 'Banners de Marcas',
 ];

@@ -8,8 +8,8 @@
             color: $color_azul;
             font-family: $questa_granderegular;
             font-weight: normal;
-            font-size: 4.109375rem;
-            line-height: 4.305rem;        }
+            font-size: 66px;
+            line-height: 69px;        }
     }
     .contenedor{
         background: $fondo_crema url(../img/fondo_tips.gif) repeat-y center 0;
@@ -31,25 +31,25 @@
                 float: left;
                 width: 23.5%;
                 font-family: $questa_granderegular;
-                font-size: 5.465rem;
-                line-height: 2rem;
+                font-size: 87px;
+                line-height: 32px;
                 color: $color;
                 @media only screen and (max-width:960px){
-                    font-size: 4.5rem;
+                    font-size: 72px;
                 }
             }
             p{
                 float: left;
                 width: 76.5%;
                 margin: 0;
-                font-size: 1.4375rem;
-                line-height: 1.570625rem;
+                font-size: 23px;
+                line-height: 25px;
                 font-weight: 300;
                 color: $gris;
                 span{
                     display: block;
                     padding-top: 5px;
-                    font-size: 0.8125rem;
+                    font-size: 13px;
                     color: $gris;
                     font-style: italic;
                 }
@@ -58,8 +58,8 @@
     }
     @media only screen and (max-width:900px){
         .banner h1{
-            font-size: 3.08203125rem;
-            line-height: 3.22875rem;
+            font-size: 49px;
+            line-height: 52px;
         }
         .contenedor{
             background-image: none;

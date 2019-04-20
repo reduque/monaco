@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=640">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet"> -->
     <base href="{{ asset('/') }}">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -36,7 +37,7 @@
                 <ul>
                     <li><a @if($seccion=='home') class="activo" @endif href="{{ route('home') }}">Home</a></li>
                     <li><a @if($seccion=='our_story') class="activo" @endif href="{{ route('our_story') }}">Our Story</a></li>
-                    <li><a href="">Products</a></li>
+                    <li><a @if($seccion=='products') class="activo" @endif href="{{ route('brands') }}">Products</a></li>
                     <li><a @if($seccion=='divisions') class="activo" @endif href="{{ route('divisions') }}">Divisions</a></li>
                     <li><a @if($seccion=='tips') class="activo" @endif href="{{ route('tips') }}">Eating Healthy</a></li>
                     <li><a @if($seccion=='recipes') class="activo" @endif href="{{ route('recipes') }}">The Kitchen</a></li>

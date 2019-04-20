@@ -5,3 +5,4 @@ css_dir = "css"
 images_dir = "img"
 javascript_dir = "js"
 output_style = :compressed
+#output_style = :nested

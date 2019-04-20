@@ -1,0 +1,347 @@
+.brands1{
+    background: #000;
+    padding: 0 7.03125%;
+    h1{
+        margin: 0;
+        color: #fff;
+        padding-top: 3%;
+        font-size: 28px;
+    }
+    a{
+        width: 512px;
+        height: 280px;
+        display: block;
+        text-indent: -999999px;
+        background: url(../img/logo.svg) no-repeat center center / 353px auto;
+        &:hover{
+            background-size: 388px auto;
+        }
+        @media only screen and (max-width:800px){
+            width: 100%;
+        }
+    }
+}
+
+.brands2{
+    padding: 0 7.03125%;
+    @extend %box-sizing;
+    h2{
+        margin: 0;
+        padding-top: 3%;
+        font-size: 28px;
+    }
+    .other{
+        a{
+            width: 50%;
+            height: 280px;
+            display: block;
+            float: left;
+            text-indent: -999999px;
+            &:nth-child(1){
+                background: url(../img/brand1.svg) no-repeat center center / 200px auto;
+                &:hover{
+                    background-size: 220px auto;
+                }
+            }
+            &:nth-child(2){
+                background: url(../img/brand2.svg) no-repeat center center / 312px auto;
+                &:hover{
+                    background-size: 343px auto;
+                }
+            }
+            @media only screen and (max-width:800px){
+                float: none;
+                width: 100%;
+            }
+        }
+    }
+}
+
+.brands3{
+    clear: both;
+    padding: 0 7.03125%;
+    @extend %box-sizing;
+    h2{
+        margin: 0;
+        padding-top: 3%;
+        font-size: 28px;
+    }
+    div{
+        width: 33%;
+        float: left;
+        ul{
+            @include ul_limpio();
+            margin: 35px 0;
+            li{
+                a{
+                    display: block;
+                    line-height: 35px;
+                    font-family: $questa_granderegular;
+                    font-size: 30px;
+                    &:hover{
+                        font-family: $roboto;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+    .sello{
+        min-height: 250px;
+        text-align: center;
+        img{
+            max-width: 90%;
+        }
+    }
+    @media only screen and (max-width:800px){
+        div{
+            width: 50%;
+        }
+        .sello{
+            display: none;
+        }
+    }
+}
+// brand_monaco
+.brand_ppl{width: 100%;}
+.productos{
+    padding: 0 7.03125% 7.03125% 7.03125%;
+    position: relative;
+    z-index: 2;
+    .migas{
+        @include ul_limpio();
+        margin: 20px 0;
+        height: 15px;
+        li{
+            line-height: 15px;
+            float: left;
+            padding: 0 5px;
+            border-left: 1px solid $gris;
+            color: $gris;
+            a{
+                color: $gris;
+            }
+            &:first-child{
+                padding-left: 0;
+                border: none;
+            }
+            &:last-child a{
+                color: $color;
+            }
+        }
+    }
+    .lines{
+        @include ul_limpio();
+        border: 1px solid $color;
+        display: inline-block;
+        height: 30px;
+        margin: 25px 0;
+        li{
+            padding: 6px 0;
+            float: left;
+            a{
+                display: block;
+                font-size: 15px;
+                line-height: 18px;
+                color: $color;
+                padding: 0 6px;
+                border-left: 1px solid $color;
+                text-transform: uppercase;
+                &.activo, &:hover{
+                    font-weight: bold;
+                    padding: 0 5px;
+                }
+            }
+            &:first-child a{
+                border: none;
+            }
+        }
+    }
+    .caregories{
+        padding-bottom:7.03125%;
+        background:url(../img/o_n.svg) no-repeat right bottom / 190px auto;
+        background-position: right 33px bottom -100px;
+        border-bottom: 1px solid #000;
+        min-height: 150px;
+        a{
+            font-family: $questa_granderegular;
+            font-size: 30px;
+            line-height: 36px;
+            display: block;
+            &:hover{
+                font-family: $roboto;
+                font-weight: bold;
+            }
+        }
+        h1{
+            font-family: $questa_granderegular;
+            font-size: 45px;
+            font-weight: normal;
+            margin: 0;
+            &:after{
+                content: "";
+                display: block;
+                width: 36px;
+                height: 1px;
+                background: #000;
+                margin: 10px 0 20px 0;
+            }
+        }
+        p{
+            color: $color;
+            font-size: 30px;
+            line-height: 35px;
+            font-weight: 300;
+            margin-top: 0;
+            width: 65%;
+            @media only screen and (max-width:900px){
+                width: 100%;
+                margin-bottom: 200px;
+            }
+        }
+    }
+    .categories_2{
+        article{
+            width: 33%;
+            float: left;
+            padding-top: 3%;
+            a{
+                div{
+                    height: 310px;
+                    background-repeat: no-repeat;
+                    background-size: auto 90%;
+                    background-position: center;
+                    @include transition(background-size 100ms);
+                    margin-bottom: 3%;
+                }
+                h4{
+                    margin: 0;
+                    text-align: center;
+                    line-height: 20px;
+                    width: 95%;
+                    @include transition(font-size 100ms);
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    overflow: hidden;
+                }
+                &:hover{
+                    div{
+                        background-size: auto 100%;
+                    }
+                    h4{
+                        font-size: 18px;
+                    }
+                }
+            }
+            @media only screen and (max-width:960px){
+                width: 50%;
+            }
+        }
+    }
+
+    .subcategories{
+        article{
+            width: 33%;
+            float: left;
+            padding-top: 3%;
+            a{
+                div{
+                    height: 310px;
+                    background-repeat: no-repeat;
+                    background-size: auto 80%;
+                    background-position: center;
+                    @include transition(background-size 100ms);
+                    margin-bottom: 3%;
+                }
+                h4{
+                    margin: 0;
+                    text-align: center;
+                    line-height: 20px;
+                    width: 95%;
+                    @include transition(font-size 100ms);
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    overflow: hidden;
+                }
+                h3{
+                    font-weight: 300;
+                    margin: 0;
+                    text-align: center;
+                    font-size: 16px;
+                }
+                &:hover{
+                    div{
+                        background-size: auto 90%;
+                    }
+                    h4{
+                        font-size: 18px;
+                    }
+                }
+            }
+            @media only screen and (max-width:960px){
+                width: 50%;
+            }
+        }
+    }
+
+
+}
+.tit_cats{
+    background: $anarillo;
+    margin: 0;
+    font-family: $questa_granderegular;
+    font-weight: normal;
+    font-size: 66px;
+    padding: 3% 7.03125%;
+    color: #fff;
+}
+.brand_ppl{
+    height: 342px;
+    position: relative;
+    z-index: 1;
+    img{
+        width: 100%;
+    }
+    @media only screen and (max-width:1024px){
+        height: 33.3984375vw;
+    }
+}
+.productos{
+    .subcat{
+        article{
+            width: 25%;
+            float: left;
+            padding-top: 3%;
+            a{
+                div{
+                    height: 237px;
+                    background-repeat: no-repeat;
+                    background-size: auto 90%;
+                    background-position: center;
+                    @include transition(background-size 100ms);
+                    margin-bottom: 3%;
+                }
+                h4{
+                    margin: 0;
+                    text-align: center;
+                    line-height: 20px;
+                    @include transition(font-size 100ms);
+                }
+                &:hover{
+                    div{
+                        background-size: auto 100%;
+                    }
+                    h4{
+                        font-size: 18px;
+                    }
+                }
+            }
+            @media only screen and (max-width:960px){
+                width: 50%;
+            }
+        }
+    }
+}
+.product_single{
+    
+}

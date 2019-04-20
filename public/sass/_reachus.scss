@@ -8,8 +8,8 @@
         color: $color;
         font-family: $questa_granderegular;
         font-weight: normal;
-        font-size: 3.973125rem;
-        line-height: 4.7675rem;
+        font-size: 64px;
+        line-height: 76px;
         padding-bottom: 30px;
     }
     .contenedor{
@@ -23,7 +23,7 @@
                 margin-bottom: 6px;
                 &:last-child{margin: 0;}
                 font-weight: 300;
-                line-height: 1.25rem;
+                line-height: 20px;
                 padding: 4px 6px;
                 color: $gris;
                 input, textarea{
@@ -33,7 +33,7 @@
                     width: 100%;
                     border: none;
                     outline: none;
-                    line-height: 1.25rem;
+                    line-height: 20px;
                     background: none;
                 }
                 textarea{height: 100px; resize: none;}
@@ -50,7 +50,8 @@
             p.direccion{
                 font-weight: 300;
                 margin: 0;
-                line-height: 1.15rem;
+                font-size: 16px;
+                line-height: 18px;
                 color: $color;
                 padding: 28px 0 38px 0;
             }
@@ -63,6 +64,7 @@
                 }
             }
             ul{
+display:none;
                 @extend %ullimpio;
                 float: right;
                 li{
@@ -103,7 +105,7 @@
         text-align: center;
         background: #000;
         color: #fff;
-        font-size: 0.9rem;
+        font-size: 14px;
         line-height: 30px;
         border: none;
         cursor: pointer;
@@ -114,8 +116,8 @@
     @media only screen and (max-width:800px){
         h1{
             font-weight: normal;
-            font-size: 3rem;
-            line-height: 3.638rem;
+            font-size: 48px;
+            line-height: 58px;
         }
     }
 }

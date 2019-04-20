@@ -17,7 +17,6 @@
         <h1>Welcome</h1>
         <p><b>OUR FEATURED PRODUCTS</b></p>
         <p>We offer an ample portfolio of premium<br>quality products, carefully selected to ensure<br>that each bite is beyond delicious</p>
-
     </section>
     <section class="banner_home_conteiner">
         <div class="banner_home2"><div class="contenedor"></div></div>
@@ -59,7 +58,7 @@
 @endsection
 
 @section('javascript')
-    <script>
+<script>
     var ancho=$('.banner_home2').width();
     var b_act=0;
 

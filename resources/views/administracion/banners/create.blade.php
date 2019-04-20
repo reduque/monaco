@@ -57,6 +57,11 @@
                 <label><span>Min size 1024 x 760 px | JPG o PNG</span></label>
             </div>
         </div>
+        <div class="col-lg-6">
+            <div class="form-group">
+                <input type="checkbox" class="" name="active" id="a_a" value="1" @if( old('active',1) == 1 ) checked @endif >&nbsp;&nbsp;<label for="a_a">Active</label>
+            </div>
+        </div>
     </div>
 
     <div class="row">

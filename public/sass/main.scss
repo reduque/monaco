@@ -14,28 +14,29 @@
 }
 
 $roboto: 'Roboto', sans-serif;
-$questa_granderegular: 'questa_granderegular';
+$questa_granderegular: 'questa_granderegular', serif;
+//$questa_granderegular: 'Playfair Display', serif;
 $color: #A08742;
 $color_vino: #6F003F;
 $color_azul: #006778;
 $color_naranja: #E13818;
 $fondo_crema: #EEE6DB;
 $gris: #808080;
+$anarillo: #F8B627;
 
 //reset
 
-
-*{font-family: $roboto; color: #000;}
-
-h1, h2, h3{font-weight: 600;}
-html{
-    margin: 0;
-    padding: 0;
+body *{
+    font-family: $roboto;
+    color: #000;
+	max-height: 999999px;
 }
-body {
+
+body, html {
     margin:0;
     padding:0;
-	background: #333;
+    background: #333;
+    font-size: 16px;
 }
 a img{border:none}
 a{text-decoration:none; outline:0; border:none;}
@@ -56,7 +57,7 @@ form{margin:0; padding:0}
 
 .floati{float:left;}
 .floatd{float:right;}
-.separador{clear:both;height:0px!important; overflow:hidden}
+.separador{clear:both;height:0px; overflow:hidden}
 .separadorv{clear:both;height:10px; font-size:1px;}
 @mixin ul_limpio(){list-style:none; margin:0; padding:0;}
 
@@ -77,17 +78,24 @@ form{margin:0; padding:0}
         }
     }
 }
-
-@import "_layout";
-@import "_home";
-@import "_our_story";
-@import "_divisions";
-@import "_reachus";
-@import "_tips";
-@import "_recipes";
 a{
     @include transition(color 500ms, background-color 500ms);
 }
+a.aumentar{
+    @include transition(background-size 100ms);
+}
+
+
+@import "layout";
+@import "home";
+@import "our_story";
+@import "divisions";
+@import "reachus";
+@import "tips";
+@import "recipes";
+@import "brands";
+
+
 .has-error{
     color: $color_vino!important;
     font-weight: bold!important;

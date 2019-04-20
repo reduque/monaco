@@ -11,7 +11,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $banners=Banner::inRandomOrder()->get();
+        $banners=Banner::where('active',1)->inRandomOrder()->get();
         $tip=Tip::inRandomOrder()->first();
         $recipe=Recipe::inRandomOrder()->first();
         return view('home',['seccion' => 'home', 'banners' => $banners, 'tip' => $tip, 'recipe' => $recipe]);

@@ -28,6 +28,15 @@ Route::get('eating-healthy-tips/', 'TipController@index')->name('tips');
 Route::get('the-kitchen/', 'RecipeController@index')->name('recipes');
 Route::get('the-kitchen/{slug}/', 'RecipeController@category')->name('recipes_category');
 
+Route::get('brands/', 'ProductController@brands')->name('brands');
+Route::get('brand/monaco', 'ProductController@brand_monaco')->name('brand_monaco');
+Route::get('brand/{slug}', 'ProductController@brand')->name('brand');
+
+Route::get('line/{slug}', 'ProductController@line')->name('line');
+Route::get('category/{slug}', 'ProductController@category')->name('category');
+Route::get('subcategory/{slug}', 'ProductController@subcategory')->name('subcategory');
+Route::get('product/{slug}', 'ProductController@product')->name('product');
+
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('administracion','administracion\HomeController@index');
@@ -49,6 +58,9 @@ Route::group(['middleware' => 'auth'], function () {
 
 	    Route::get('recipes_eliminar/{id}', 'RecipeController@destroy')->name('recipes_eliminar');
 	    Route::resource('recipes', 'RecipeController');
+
+	    Route::get('banners_brands_eliminar/{id}', 'BannerBrandController@destroy')->name('banners_brands_eliminar');
+	    Route::resource('banners_brands', 'BannerBrandController');
 
 	});
 });

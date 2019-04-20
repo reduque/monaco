@@ -51,7 +51,11 @@
                     <li>
                         <a href="{{ route("recipes.index") }}"><i class="fa fa-fw fa-pencil"></i> @lang('administracion.recipes')</a>
                     </li>
-    
+<!-- productos -->
+                    <li>
+                        <a href="{{ route("banners_brands.index") }}"><i class="fa fa-fw fa-pencil"></i> @lang('administracion.banners_brands')</a>
+                    </li>
+
                     <li>
                         <a href="{{ route('logout') }}"><i class="fa fa-fw fa-sign-out"></i> @lang('administracion.salir')</a>
                     </li>
