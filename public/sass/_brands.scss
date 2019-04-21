@@ -102,10 +102,14 @@
         }
     }
 }
-// brand_monaco
+// brand_monaco -----------------------------------
 .brand_ppl{width: 100%;}
 .productos{
     padding: 0 7.03125% 7.03125% 7.03125%;
+    &.sin_pie{
+        padding-bottom: 0;
+    }
+
     position: relative;
     z-index: 2;
     .migas{
@@ -139,20 +143,22 @@
         li{
             padding: 6px 0;
             float: left;
-            a{
+            a, span{
                 display: block;
                 font-size: 15px;
                 line-height: 18px;
-                color: $color;
+                color: $gris;
                 padding: 0 6px;
                 border-left: 1px solid $color;
                 text-transform: uppercase;
+            }a{
+                color: $color;
                 &.activo, &:hover{
                     font-weight: bold;
                     padding: 0 5px;
                 }
             }
-            &:first-child a{
+            &:first-child a, &:first-child span{
                 border: none;
             }
         }
@@ -343,5 +349,128 @@
     }
 }
 .product_single{
-    
+    display:-webkit-box; display:-ms-flexbox; display:flex; -ms-flex-wrap:wrap; flex-wrap:wrap;
+    padding: 5% 0;
+    div{
+        width: 50%;
+        img{
+            max-width: 100%;
+        }
+        h1{
+            margin: 0;
+            font-family: $questa_granderegular;
+            font-weight: normal;
+            font-size: 45px;
+            &:after{
+                content: "";
+                display: block;
+                width: 36px;
+                height: 1px;
+                background: #000;
+                margin: 10px 0 20px 0;
+            }
+
+        }
+        table{
+            margin-left: 0;
+            border-collapse: collapse;
+            tr td{
+                font-size: 22px;
+                vertical-align: top;
+                padding-left: 0;
+                font-weight: 300;
+                &:first-child{
+                    word-wrap: none;
+                }
+            }
+            &:after{
+                content: "";
+                display: block;
+                width: 36px;
+                height: 1px;
+                background: #000;
+                margin: 10px 0;
+            }
+
+        }
+        h4{
+            margin: 0;
+            font-size: 22px;
+        }
+        p{
+            margin:5px 0;
+            font-size: 22px;
+            font-weight: 300;
+        }
+        @media only screen and (max-width:900px){
+            width: 100%;
+            &:first-child{
+                text-align: center;
+                margin-bottom: 7%;
+            }
+        }
+    }
+}
+.pie_prod{
+    position: relative;
+    background: $fondo_crema;
+    .fondo{
+        position: absolute;
+        height: 50%;
+        background: #fff;
+        width: 100%;
+    }
+    ul{
+        @include ul_limpio();
+        position: relative;
+        margin: 0 auto;
+        width: 774px;
+        max-width: 90%;
+        background: #77F;
+        li{
+            float: left;
+            margin: 1px;
+            width: calc(33.333% - 2px);
+            position: relative;
+            &:after {
+                content: "";
+                display: block;
+                padding-bottom: 100%;
+                background: #000;
+            }
+            a{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                .imagen{
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background-position: center center;
+                    background-size: 100% auto;
+                    @include transition(opacity 200ms);
+                }
+                &:hover .imagen{
+                    opacity:0.4;
+                }
+                .texto{
+                    position: absolute;
+                    left: 10%;
+                    bottom: 7%;
+                    h3, p{color: #fff; margin: 0;}
+                    h3{
+                        font-family: $questa_granderegular;
+                        font-weight: normal;
+                        font-size: 50px;
+                        line-height: 50px;
+                        @media only screen and (max-width:900px){
+                            font-size: 40px;
+                            line-height: 40px;
+                        }
+                    }
+                    p{text-decoration: underline;}
+                }
+            }
+        }
+    }
 }
