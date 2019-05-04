@@ -4,8 +4,8 @@
 
 
 @section('content')
-<div class="brand_ppl">
-    <img src="uploads/categories/{{ $subcategory->category->banner }}" alt="{{ $subcategory->category->category_en }}">
+<div class="brand_ppl2">
+    <img src="uploads/subcategories/{{ $subcategory->img }}" alt="{{ $subcategory->category->category_en }} - {{ $subcategory->subcategory_en }}">
 </div>
 <div class="productos">
     <ul class="migas">
@@ -14,11 +14,7 @@
         <li><a href="{{ route('category',$subcategory->category->slug_en) }}">{{ $subcategory->category->category_en }}</a></li>
         <li><a href="{{ route('subcategory',$subcategory->slug_en) }}">{{ $subcategory->subcategory_en }}</a></li>
     </ul>
-    <ul class="lines">
-        @foreach ($lines as $line)
-            <li><a href="{{ route('line',$line->slug_en) }}">{{ $line->line_en }}</a></li>
-        @endforeach
-    </ul>
+    @include('partials._divisions')
     <div class="caregories">
         <h1>{{ $subcategory->subcategory_en }}</h1>
         <p>{!! nl2br($subcategory->description_en) !!}</p>
@@ -33,6 +29,7 @@
             </a>
         </article>
     @endforeach
+        <div class="separadorv"></div>
     </div>
     <div class="separador"></div>
 </div>

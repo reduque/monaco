@@ -7,7 +7,7 @@
 
 <section class="tips">
     <div class="banner">
-        <h1>Tips for<br>Eating Healthy</h1>
+        <h1>Tips for <br class="enter">Eating Healthy</h1>
     </div>
     <div class="contenedor">
         @php

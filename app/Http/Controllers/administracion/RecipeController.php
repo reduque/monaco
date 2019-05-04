@@ -38,6 +38,7 @@ class RecipeController extends Controller
             if($request->picture){
                 $fileName = $this->saveFile($request->picture, 'recipes/',(string)(date("YmdHis")) . (string)(rand(1,9)));
             }
+            if(!$request->active) $request->request->add(['active' => 0]);
             $recipe=Recipe::create([
                 'title_en' => $request->title_en,
                 'slug_en' => $slug,
@@ -47,6 +48,8 @@ class RecipeController extends Controller
                 'time_en' => $request->time_en,
                 'recipes_categories_id' => $request->recipes_categories_id,
                 'picture' => $fileName,
+                'publication_date' => $request->publication_date,
+                'active' => $request->active,
             ]);
             return redirect()->route('recipes.edit', codifica($recipe->id))->with("notificacion", __('administracion.grabado_exito') );
 
@@ -90,6 +93,7 @@ class RecipeController extends Controller
                     $this->deleteFile('recipes/' . $fileName);
                 $fileName = $this->saveFile($request->picture, 'recipes/',(string)(date("YmdHis")) . (string)(rand(1,9)));
             }
+            if(!$request->active) $request->request->add(['active' => 0]);
             $recipe->update([
                 'title_en' => $request->title_en,
                 'slug_en' => $slug,
@@ -99,6 +103,8 @@ class RecipeController extends Controller
                 'time_en' => $request->time_en,
                 'recipes_categories_id' => $request->recipes_categories_id,
                 'picture' => $fileName,
+                'publication_date' => $request->publication_date,
+                'active' => $request->active,
             ]);
             return redirect()->route('recipes.edit', codifica($id))->with("notificacion", __('administracion.grabado_exito') );
 

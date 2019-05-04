@@ -56,6 +56,12 @@ header{
 		width: 50%;
 		display: none;
 		padding-bottom: 20px;
+		@media only screen and (max-width:1008px){
+			width: 70%;
+		}
+		@media only screen and (max-width:720px){
+			width: 100%;
+		}
 		a.cerrar_hamburguesa{
 			text-indent: -999px;
 			background: url(../img/hamburguesa_b.svg) no-repeat 40px 30px / 32px auto;
@@ -86,20 +92,6 @@ header{
 			}
 			&:hover li a.activo{
 				color: #000;
-			}
-			@media only screen and (max-width:1008px){
-				padding-top: 18px;
-				li a{
-					font-size: 35px;
-					line-height: 48px;
-				}
-			}
-			@media only screen and (max-width:640px){
-				padding-top: 20px;
-				li a{
-					font-size: 32px;
-					line-height: 45px;
-				}
 			}
 		}
 	}
@@ -145,8 +137,9 @@ footer{
 		.floatd{
 			div{
 				float: left;
-				width: 124px;
 				ul{
+					width: 124px;
+					float:left;
 					@extend %ullimpio;
 					li{
 						font-size: 11px;
@@ -192,14 +185,16 @@ footer{
 		.footer2{
 			.floatd{
 				width: 100%;
-				padding-top: 50px;
 				div{
-					padding-top: 20px;
-					width: 33%;
-					ul li a{
-						font-size: 14px;
-						&.dorado{
-							font-size: 16px;
+					width: 50%;
+					ul{
+						padding-top: 10px;
+						width: 100%;
+						li a{
+							font-size: 14px;
+							&.dorado{
+								font-size: 16px;
+							}
 						}
 					}
 				}

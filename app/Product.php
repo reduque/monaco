@@ -18,6 +18,9 @@ class Product extends Model
 	public function brand(){
 	    return $this->belongsTo('App\Brand');
 	}
+	public function line(){
+	    return $this->belongsTo('App\Line');
+	}
 
 
 }

@@ -60,18 +60,16 @@
                 <label>Image</label>
                 <div class="slim">
                     <input name="img_en" type="file" accept="image/jpeg, image/png" />
+                    @if($banner->img_en<>'')
+                    <img src="uploads/banners/{{ $banner->img_en }}">
+                @endif
                 </div>
-                <label><span>Min size 1024 x 760 px | JPG o PNG</span></label>
+                <label><span>Min size 1024 x 516 px | JPG o PNG</span></label>
             </div>
         </div>
         <div class="col-lg-6">
             <div class="form-group">
-                <div class="form-group">
-                    <input type="checkbox" class="" name="active" id="a_a" value="1" @if(old('active', $banner->active)==1) checked @endif >&nbsp;&nbsp;<label for="a_a">Active</label>
-                </div>
-                @if($banner->img_en<>'')
-                    <p><img src="uploads/banners/{{ $banner->img_en }}" style="max-width:100%"></p>
-                @endif
+                <input type="checkbox" class="" name="active" id="a_a" value="1" @if(old('active', $banner->active)==1) checked @endif >&nbsp;&nbsp;<label for="a_a">Active</label>
             </div>
         </div>
     
@@ -110,14 +108,14 @@ $(document).ready(function(){
 <script type="text/javascript">
   $(document).ready(function(){
    $('.slim').slim({
-      ratio: '1024:760',
+      ratio: '1024:516',
     minSize: {
       width: 1024,
-      height: 760
+      height: 516
     },
     size: {
       width: 1024,
-      height: 760
+      height: 516
     }
   });
  })

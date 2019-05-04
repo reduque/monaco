@@ -24,7 +24,7 @@
     </section>
     <section class="bloque4">
         <h3>FROM OUR KITCHEN</h3>
-        <h2>Out of ideas for tonight supper?</h2>
+        <h2>Out of ideas for tonight’s supper?</h2>
         <p>We’ll be glad to give you a hand</p>
     </section>
     <section class="receta_home">
@@ -43,7 +43,7 @@
                 <div class="table">
                     <div class="tr">
                         <div class="td"><a class="a1" href="{{ route('recipes_category',$recipe->category->slug_en) }}#rep_{{ $recipe->id }}">FULL VIEW</a></div>
-                        <div class="td"><a class="a2" href="{{ route('recipes') }}">SEE MORE RECIPEES</a></div>
+                        <div class="td"><a class="a2" href="{{ route('recipes') }}">SEE MORE</a></div>
                     </div>
                 </div>
             </div>
@@ -93,16 +93,17 @@
         p=-b_act * ancho;
         $('.contenedor').css('left', p);
         cont_top=$('.contenido').offset().top;
+        //receta
         mas=false;
         alto=0;
-        alto_texto=285;
+        // -49
+        alto_texto=237;
         alti_linea=21;
         if(ancho<=783){
-            alto_texto=400;
+            alto_texto=351;
             alti_linea=23;
         }
         $('.elementos').each(function(){
-
             if( $(this).offset().top + $(this).height() - cont_top > alto_texto ){
                 if(!mas){
                     if( $(this).hasClass('line') ){
@@ -116,7 +117,7 @@
                 mas=true;
             }else{
                 alto=$(this).offset().top + $(this).height() - cont_top - 2;
-                $('.contenido').css('height', alto);
+                $('.contenido').css('height', alto-2);
             }
         })
         if(mas){

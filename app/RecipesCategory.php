@@ -10,7 +10,7 @@ class RecipesCategory extends Model
 	protected $guarded = ['id'];
 
 	public function recipes(){
-		return $this->hasMany('App\Recipe','recipes_categories_id')->orderby('id','desc');
+		return $this->hasMany('App\Recipe','recipes_categories_id')->where('active',1)->whereDate('publication_date','<=',date('Y-m-d'))->orderby('id','desc');
 	}
 
 }

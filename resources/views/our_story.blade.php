@@ -34,6 +34,7 @@
         <div class="floatd">
             <p>Marco, Nubar’s brother and son to Murat is the youngest sibling. As a young teenager he was rebellious and adventurous by nature and hence was last to join the family project as he was finishing his college degree as Mechanical Engineer.  Marco, a focused, energy-driven personality, binds the company together bringing Nubar´s business vision and entrepreneurship with his father´s industrial wisdom with a hands-on involvement in the company´s operations.</p>
             <p>Three pillars that established Monaco Foods: Nubar, Murat and Marco, the foundations of what once began as a curious trip to the market. As we stand in the present, we are now a team of over 70 professionals that share the same vision and passion that represents Monaco Foods.</p>
+            <div id="commitments"></div>
             <p>Today, Monaco Foods serves tables around the world with delicious foods that bring flavor and delight to many meals.</p>
         </div>
     </article>

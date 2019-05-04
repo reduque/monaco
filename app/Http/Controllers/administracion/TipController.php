@@ -32,6 +32,7 @@ class TipController extends Controller
             if ($validator->fails()){
                 return back()->withErrors($validator)->withInput();
             }
+            if(!$request->active) $request->request->add(['active' => 0]);
             $tip=Tip::create($request->toArray());
             return redirect()->route('tips.edit', codifica($tip->id))->with("notificacion", __('administracion.grabado_exito') );
 
@@ -65,8 +66,10 @@ class TipController extends Controller
             if ($validator->fails()){
                 return back()->withErrors($validator)->withInput();
             }
+            if(!$request->active) $request->request->add(['active' => 0]);
             $id=decodifica($id);
             $tip=Tip::find($id);
+
             $tip->update($request->toArray());
             return redirect()->route('tips.edit', codifica($id))->with("notificacion", __('administracion.grabado_exito') );
 

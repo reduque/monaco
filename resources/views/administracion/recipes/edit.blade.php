@@ -87,11 +87,19 @@
                 <label>Serves</label>
                 <input type="text" class="form-control" name="serves_en" value="{{ old('serves_en',$recipe->serves_en) }}" maxlength="10">
             </div>
+            <div class="form-group">
+                <label>Publication date</label>
+                <input type="date" class="form-control" name="publication_date" value="{{ old('publication_date', $recipe->publication_date) }}" maxlength="10">
+            </div>
         </div>
         <div class="col-lg-3">
             <div class="form-group">
                 <label>Time</label>
                 <input type="text" class="form-control" name="time_en" value="{{ old('time_en',$recipe->time_en) }}" maxlength="20">
+            </div>
+            <div class="form-group">
+                <br>
+                <input type="checkbox" class="" name="active" id="a_a" value="1" @if(old('active', $recipe->active)==1) checked @endif >&nbsp;&nbsp;<label for="a_a">Active</label>
             </div>
         </div>
     </div>

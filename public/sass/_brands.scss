@@ -1,4 +1,5 @@
 .brands1{
+    position: relative;
     background: #000;
     padding: 0 7.03125%;
     h1{
@@ -12,7 +13,7 @@
         height: 280px;
         display: block;
         text-indent: -999999px;
-        background: url(../img/logo.svg) no-repeat center center / 353px auto;
+        background: url(../img/logo_blanco.svg) no-repeat center center / 353px auto;
         &:hover{
             background-size: 388px auto;
         }
@@ -23,6 +24,7 @@
 }
 
 .brands2{
+    position: relative;
     padding: 0 7.03125%;
     @extend %box-sizing;
     h2{
@@ -37,17 +39,11 @@
             display: block;
             float: left;
             text-indent: -999999px;
-            &:nth-child(1){
-                background: url(../img/brand1.svg) no-repeat center center / 200px auto;
-                &:hover{
-                    background-size: 220px auto;
-                }
-            }
-            &:nth-child(2){
-                background: url(../img/brand2.svg) no-repeat center center / 312px auto;
-                &:hover{
-                    background-size: 343px auto;
-                }
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size:360px auto;
+            &:hover{
+                background-size: 400px auto;
             }
             @media only screen and (max-width:800px){
                 float: none;
@@ -58,10 +54,12 @@
 }
 
 .brands3{
+    position: relative;
     clear: both;
     padding: 0 7.03125%;
     @extend %box-sizing;
     h2{
+    border-top: 1px solid #000;
         margin: 0;
         padding-top: 3%;
         font-size: 28px;
@@ -124,13 +122,16 @@
             color: $gris;
             a{
                 color: $gris;
+                &:hover{
+                    font-weight: bold;
+                }
             }
             &:first-child{
                 padding-left: 0;
                 border: none;
             }
             &:last-child a{
-                color: $color;
+                color: $gris_claro;
             }
         }
     }
@@ -140,6 +141,11 @@
         display: inline-block;
         height: 30px;
         margin: 25px 0;
+        &:hover{
+            a.activo{
+                padding: 0 6px;font-weight: normal;
+            }
+        }
         li{
             padding: 6px 0;
             float: left;
@@ -151,11 +157,16 @@
                 padding: 0 6px;
                 border-left: 1px solid $color;
                 text-transform: uppercase;
-            }a{
+            }
+            a{
                 color: $color;
-                &.activo, &:hover{
+                &.activo{
                     font-weight: bold;
                     padding: 0 5px;
+                }
+                &:hover{
+                    font-weight: bold!important;
+                    padding: 0 5px!important;
                 }
             }
             &:first-child a, &:first-child span{
@@ -246,10 +257,11 @@
     }
 
     .subcategories{
+        background: url(../img/linea2.gif);
         article{
             width: 33%;
             float: left;
-            padding-top: 3%;
+            padding: 20px 0 40px 0;
             a{
                 div{
                     height: 310px;
@@ -290,6 +302,67 @@
         }
     }
 
+    .caregories_pl{
+        padding: 4.6875% 0;
+        //background-size: 
+        background-repeat: no-repeat;
+        background-position: right 0 top 70px;
+        background-size:360px auto;
+        border-bottom: 1px solid #000;
+        min-height: 280px;
+        a{
+            font-family: $questa_granderegular;
+            font-size: 30px;
+            line-height: 36px;
+            display: block;
+            &:hover, &.activo{
+                font-family: $roboto;
+                font-weight: bold;
+            }
+        }
+        h1{
+            font-size: 28px;
+            margin: 0 0 35px 0;
+        }
+        p{
+            color: $color;
+            font-size: 30px;
+            line-height: 35px;
+            font-weight: 300;
+            margin-top: 0;
+            width: 65%;
+            @media only screen and (max-width:900px){
+                width: 100%;
+                margin-bottom: 200px;
+            }
+        }
+    }
+    .sub_bloques{
+        position: relative;
+        h2{
+            position: absolute;
+            top: 0;
+            font-size: 22px;
+            font-weight: 300;
+            z-index: 200;
+            margin: 7px 0 0 0;
+        }
+        .subir{
+            position: absolute;
+            z-index: 200;
+            height: 25px;
+            width: 100%;
+            bottom: 10px;
+            background:url(../img/subir.svg) no-repeat;
+            background-position: right -3px top 2px;
+            background-size: auto 30px;
+            text-indent: -999px;
+            &:hover{
+                background-position: right -22px top 0!important;
+                background-size: auto 50px;
+            }
+        }
+    }
 
 }
 .tit_cats{
@@ -297,11 +370,11 @@
     margin: 0;
     font-family: $questa_granderegular;
     font-weight: normal;
-    font-size: 66px;
-    padding: 3% 7.03125%;
+    font-size: 50px;
+    padding: 2% 7.03125%;
     color: #fff;
 }
-.brand_ppl{
+.brand_ppl2{
     height: 342px;
     position: relative;
     z-index: 1;
@@ -314,10 +387,12 @@
 }
 .productos{
     .subcat{
+        background: url(../img/linea_sub.gif);
         article{
             width: 25%;
             float: left;
-            padding-top: 3%;
+            padding: 26px 0;
+
             a{
                 div{
                     height: 237px;
@@ -325,7 +400,7 @@
                     background-size: auto 90%;
                     background-position: center;
                     @include transition(background-size 100ms);
-                    margin-bottom: 3%;
+                    margin-bottom: 26px;
                 }
                 h4{
                     margin: 0;
@@ -406,7 +481,7 @@
             width: 100%;
             &:first-child{
                 text-align: center;
-                margin-bottom: 7%;
+                margin-bottom: 10%;
             }
         }
     }

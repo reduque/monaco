@@ -96,6 +96,7 @@
         }
         p{
             font-size: 21px;
+            line-height: 26px;
         }
     }
 }
@@ -117,6 +118,17 @@
                 img{
                     height: auto;
                 }
+            }
+        }
+        .tapa{
+            position: absolute;
+            height: 100%;
+            width: 50%;
+            background:#DF3818 url(../uploads/banners_brands/tapa.jpg) no-repeat center center / auto 100%;
+            left: -50%;
+            @include transition(left 500ms);
+            &.activo{
+                left: 0;
             }
         }
     }
@@ -167,18 +179,26 @@
         font-size: 30px;
         margin: 2px 0 8px 0;
     }
-    @media only screen and (max-width:900px){
+    @media only screen and (max-width:920px){
         h2{
             font-size: 53px;
         }
     }
-    @media only screen and (max-width:800px){
+    @media only screen and (max-width:820px){
         padding-top: 60px;
         h2{
             font-size: 43px;
         }
         p{
             font-size: 27px;
+        }
+    }
+    @media only screen and (max-width:700px){
+        h2{
+            font-size: 38px;
+        }
+        p{
+            font-size: 24px;
         }
     }
 }
@@ -204,12 +224,15 @@
             color: #FFF;
             font-family: $questa_granderegular;
             font-size: 40px;
-            margin: 0;
+            margin: 0 1rem;
             padding:0 20px 10px 20px;
             font-weight: normal;
+            height: 98px;
+            /*
             white-space: nowrap; 
             overflow: hidden;
             text-overflow: ellipsis;
+            */
         }
         .contenido{
             padding-bottom: 10px;
@@ -247,12 +270,7 @@
                 display: inline-block;
                 line-height: 30px;
                 margin: 0 5px;
-                &.a1{
-                    font-size: 14px;
-                }
-                &.a2{
-                    font-size: 9px;
-                }
+                font-size: 14px;
                 &:hover{
                     font-weight: bold;
                 }
@@ -279,8 +297,8 @@
                 font-size: 20px;
             }
             h3{
-                font-size: 48px;
-                line-height: 52px;
+                //font-size: 48px;
+                //line-height: 52px;
             }
             .contenido{
                 p{

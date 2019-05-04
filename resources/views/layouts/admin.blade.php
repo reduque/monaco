@@ -55,6 +55,9 @@
                     <li>
                         <a href="{{ route("banners_brands.index") }}"><i class="fa fa-fw fa-pencil"></i> @lang('administracion.banners_brands')</a>
                     </li>
+                    <li>
+                        <a href="{{ route("products.index") }}"><i class="fa fa-fw fa-pencil"></i> @lang('administracion.products')</a>
+                    </li>
 
                     <li>
                         <a href="{{ route('logout') }}"><i class="fa fa-fw fa-sign-out"></i> @lang('administracion.salir')</a>

@@ -9,8 +9,10 @@
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
+if(config('app.env') <> 'local'){
+	URL::forceScheme('https');
+}
 */
-
 
 Auth::routes();
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
@@ -30,12 +32,15 @@ Route::get('the-kitchen/{slug}/', 'RecipeController@category')->name('recipes_ca
 
 Route::get('brands/', 'ProductController@brands')->name('brands');
 Route::get('brand/monaco', 'ProductController@brand_monaco')->name('brand_monaco');
-Route::get('brand/{slug}', 'ProductController@brand')->name('brand');
+Route::get('brand/{slug}/{slug_cat?}/', 'ProductController@brand')->name('brand');
 
-Route::get('line/{slug}', 'ProductController@line')->name('line');
+//Route::get('line/{slug}', 'ProductController@line')->name('line');
 Route::get('category/{slug}', 'ProductController@category')->name('category');
+Route::get('change_line/{id}', 'ProductController@change_line')->name('change_line');
 Route::get('subcategory/{slug}', 'ProductController@subcategory')->name('subcategory');
 Route::get('product/{slug}', 'ProductController@product')->name('product');
+
+Route::get('tyc', 'HomeController@tyc')->name('tyc');
 
 
 Route::group(['middleware' => 'auth'], function () {
@@ -61,6 +66,9 @@ Route::group(['middleware' => 'auth'], function () {
 
 	    Route::get('banners_brands_eliminar/{id}', 'BannerBrandController@destroy')->name('banners_brands_eliminar');
 	    Route::resource('banners_brands', 'BannerBrandController');
+
+	    Route::get('products_eliminar/{id}', 'ProductController@destroy')->name('products_eliminar');
+	    Route::resource('products', 'ProductController');
 
 	});
 });

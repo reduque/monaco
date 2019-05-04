@@ -29,4 +29,5 @@ return [
     'recipes' => 'Recetas',
     'category' => 'Categoría',
     'banners_brands' => 'Banners de Marcas',
+    'products' => 'Productos (Monaco)',
 ];

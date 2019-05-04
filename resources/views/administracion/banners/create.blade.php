@@ -54,7 +54,7 @@
                 <div class="slim">
                     <input name="img_en" type="file" accept="image/jpeg, image/png" />
                 </div>
-                <label><span>Min size 1024 x 760 px | JPG o PNG</span></label>
+                <label><span>Min size 1024 x 516 px | JPG o PNG</span></label>
             </div>
         </div>
         <div class="col-lg-6">
@@ -79,14 +79,14 @@
 <script type="text/javascript">
   $(document).ready(function(){
    $('.slim').slim({
-      ratio: '1024:760',
+      ratio: '1024:516',
     minSize: {
       width: 1024,
-      height: 760
+      height: 516
     },
     size: {
       width: 1024,
-      height: 760
+      height: 516
     }
   });
  })

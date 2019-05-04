@@ -6,7 +6,12 @@
 @section('content')
 <section class="recipes_header">
     <div class="contenedor">
-        <h1>{{ $category->category_en }}</h1>
+
+        <ul class="categories">
+            @foreach ($categories as $category_h)
+                <li><a href="{{ route('recipes_category',$category_h->slug_en) }}" @if($category_h->id == $category->id) class="activo" @endif>{{ $category_h->category_en }}</a></li>
+            @endforeach
+        </ul>
         <div class="lista_r">
         @foreach ($category->recipes as $recipe)
             <div><a href="" data-id="{{ $recipe->id }}">{{ $recipe->title_en }}</a></div>
@@ -39,8 +44,8 @@
                 <div class="textos">
                     <div class="ingredientes">{!! nl2br($recipe->ingredients_en) !!}</div>
                 </div>
-                <a href="" class="x">Close</a>
             </div>
+            <a href="" class="x">Close</a>
         </div>
         <div class="indicaciones">
             <h2>Directions</h2>

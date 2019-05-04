@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Banner;
 use App\Tip;
 use App\Recipe;
+use App\Line;
 
 class HomeController extends Controller
 {
@@ -13,7 +14,7 @@ class HomeController extends Controller
     {
         $banners=Banner::where('active',1)->inRandomOrder()->get();
         $tip=Tip::inRandomOrder()->first();
-        $recipe=Recipe::inRandomOrder()->first();
+        $recipe=Recipe::where('active',1)->whereDate('publication_date','<=',date('Y-m-d'))->orderby('publication_date','desc')->first();
         return view('home',['seccion' => 'home', 'banners' => $banners, 'tip' => $tip, 'recipe' => $recipe]);
     }
 
@@ -24,7 +25,8 @@ class HomeController extends Controller
 
     public function divisions()
     {
-        return view('divisions',['seccion' => 'divisions']);
+        $lines=Line::get();
+        return view('divisions',['seccion' => 'divisions', 'lines' => $lines]);
     }
 
     public function reach_us()
@@ -68,9 +70,9 @@ class HomeController extends Controller
             \Log::info('Error creating item: '.$e);
             return \Response::json(['created' => false], 500);
         }
-
-
-
-
+    }
+    public function tyc()
+    {
+        return view('tyc',['seccion' => 'home']);
     }
 }

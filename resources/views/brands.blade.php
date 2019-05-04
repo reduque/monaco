@@ -6,23 +6,27 @@
 @section('content')
     <div class="fondonegro"></div>
     <section class="banner_home_conteiner">
-        <div class="banner_home2"><div class="contenedor"></div></div>
+        <div class="banner_home2"><div class="contenedor"></div><div class="tapa"></div></div>
         <ul class="dots"></ul>
     </section>
 
 
     <section class="brands1">
+        <div class="ancla" id="brand_monaco"></div>
         <h1>Our Brand</h1>
         <a href="{{ route('brand_monaco') }}" class="aumentar">Monaco</a>
     </section>
     <section class="brands2">
+        <div class="ancla" id="private_label"></div>
         <h2>Private Label</h2>
         <div class="other">
-            <a href="{{ route('brand','lucy') }}" class="aumentar">lu cy</a>
-            <a href="{{ route('brand','casa-de-fruta') }}" class="aumentar">casa de fruta</a>
+            @foreach ($brands as $brand)
+                <a href="{{ route('brand',$brand->slug_en) }}" style="background-image: url(uploads/brands/{{ $brand->img}})" class="aumentar">{{ $brand->brand_en}}</a>
+            @endforeach
         </div>
     </section>
     <section class="brands3">
+        <div class="ancla" id="other_brands"></div>
         <h2>Other Brands</h2>
         @php
             $medio=ceil($otherbrands->count()/2);
@@ -90,20 +94,30 @@
         banner=banners[0];
         $('.contenedor').append('<a href="' + banner.link + '"><img src="uploads/banners_brands/' + banner.img + '"></a>');
         $('.dots li:nth-child(1)').addClass('activo');
+        $('.tapa').addClass('activo');
         t=setTimeout('f_mover_banner(1)', 3000);
         ajustar();
     })
     f_mover_banner=function(incremento){
         clearTimeout(t);
+        delay=0;
+        if(incremento==1 && b_act==0){
+            delay=500;
+        }
         b_act+=incremento;
         p=-b_act * ancho;
         $('.dots li').removeClass('activo');
-        $('.contenedor').animate( {left: p },1500,"easeOutCubic", function(){
+        $('.tapa').removeClass('activo');
+
+        $('.contenedor').delay(delay).animate( {left: p },1500,"easeOutCubic", function(){
             if(b_act>=tot_banners){
                 $('.contenedor').css('left',0);
                 b_act=0;
             }
             $('.dots li:nth-child(' + (b_act+1) + ')').addClass('activo');
+            if(b_act==0){
+                $('.tapa').addClass('activo');
+            }
             if(mover) t=setTimeout('f_mover_banner(1)', 3000);
         });
     }

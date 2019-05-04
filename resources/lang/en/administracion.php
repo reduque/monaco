@@ -29,4 +29,5 @@ return [
     'recipes' => 'Recipes',
     'category' => 'Category',
     'banners_brands' => 'Brands Banners',
+    'products' => 'Products (Monaco)',
 ];

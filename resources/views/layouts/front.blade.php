@@ -58,55 +58,38 @@
                 <div class="floatd">
                     <div>
                         <ul>
-                            <li><a href="" class="dorado">Our Story</a></li>
-                            <li><a href="">A story of three pillars</a></li>
-                            <li><a href="">Commitments</a></li>
+                            <li><a href="{{ route('our_story') }}" class="dorado">Our Story</a></li>
+                            <li><a href="{{ route('our_story') }}">A story of three pillars</a></li>
+                            <li><a href="{{ route('our_story') }}#commitments">Commitments</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="{{ route('brands') }}" class="dorado">Products</a></li>
+                            <li><a href="{{ route('brands') }}#brand_monaco">Monaco</a></li>
+                            <li><a href="{{ route('brands') }}#private_label">Private Label</a></li>
+                            <li><a href="{{ route('brands') }}#other_brands">Other Brands</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="{{ route('divisions') }}" class="dorado">Divisions</a></li>
+                            <li><a href="{{ route('change_line',3) }}">Food Service</a></li>
+                            <li><a href="{{ route('change_line',1) }}">Retail</a></li>
+                            <li><a href="{{ route('brands') }}#private_label">Private Label</a></li>
+                            <li><a href="{{ route('change_line',4) }}">Industrial</a></li>
                         </ul>
                     </div>
                     <div>
                         <ul>
-                            <li><a href="" class="dorado">Products</a></li>
-                            <li><a href="">Beverages</a></li>
-                            <li><a href="">Condiments & Spices</a></li>
-                            <li><a href="">Dairy</a></li>
-                            <li><a href="">Frozen</a></li>
-                            <li><a href="">Fruits</a></li>
-                            <li><a href="">Gourmet</a></li>
-                            <li><a href="">Grain, Beans & Cereals</a></li>
-                            <li><a href="">Oils & Vinegars</a></li>
+                            <li><a href="{{ route('recipes') }}" class="dorado">From Our Kitchen</a></li>
+                            <li><a href="{{ route('recipes_category','breakfast') }}">Breakfast</a></li>
+                            <li><a href="{{ route('recipes_category','appetizers-hors-doeuvres') }}">Appetizers & Hors d’Oeuvres</a></li>
+                            <li><a href="{{ route('recipes_category','main-course') }}">Main Course</a></li>
+                            <li><a href="{{ route('recipes_category','desserts') }}">Dessert</a></li>
+                            <li><a href="{{ route('recipes_category','beverages') }}">Beverages</a></li>
                         </ul>
-                    </div>
-                    <div>
                         <ul>
-                            <li><a href="">Olives & Capers</a></li>
-                            <li><a href="">Seafood</a></li>
-                            <li><a href="">Seasonal</a></li>
-                            <li><a href="">Vegetables</a></li>
+                            <li><a href="{{ route('tips') }}" class="dorado">Eating Healthy</a></li>
+                            <li><a href="{{ route('tips') }}">Tips for Eating Healthy</a></li>
                             <li>&nbsp;</li>
-                            <li><a href="" class="dorado">Divisions</a></li>
-                            <li><a href="">Food Service</a></li>
-                            <li><a href="">Retail</a></li>
-                            <li><a href="">Private Label</a></li>
-                            <li><a href="">Industrial</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <ul>
-                            <li><a href="" class="dorado">From Our Kitchen</a></li>
-                            <li><a href="">Breakfast</a></li>
-                            <li><a href="">Appetizers & Hors </a></li>
-                            <li><a href="">d’Oeuvres</a></li>
-                            <li><a href="">Main Course</a></li>
-                            <li><a href="">Dessert</a></li>
-                            <li><a href="">Beverages</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <ul>
-                            <li><a href="" class="dorado">Eating Healthy</a></li>
-                            <li><a href="">Tips for Eating Healthy</a></li>
-                            <li>&nbsp;</li>
-                            <li><a href="" class="dorado">Reach Us</a></li>
+                            <li><a href="{{ route('reach_us') }}" class="dorado">Reach Us</a></li>
                         </ul>
                     </div>
                 </div>
@@ -114,7 +97,7 @@
             </div>
         </footer>
         <div class="pie">
-            <a href="">TERMS & CONDITIONS</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="">PRIVACY STATEMENT</a>&nbsp;&nbsp;|&nbsp;&nbsp;©2017 MONACO FOODS INC. ALL RIGHTS RESERVED
+            <a href="{{ route('tyc') }}">TERMS & CONDITIONS</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="{{ route('tyc') }}">PRIVACY STATEMENT</a>&nbsp;&nbsp;|&nbsp;&nbsp;©2017 MONACO FOODS INC. ALL RIGHTS RESERVED
         </div>
     </div>
 

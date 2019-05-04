@@ -8,9 +8,11 @@
 <div class="productos sin_pie">
     <ul class="migas">
         <li><a href="{{ route('brands') }}">Products</a></li>
-        <li><a href="{{ route('brand_monaco') }}">Monaco</a></li>
+        <li><a href="{{ route('brand_monaco') }}">{{ $product->brand->brand_en }}</a></li>
         <li><a href="{{ route('category',$product->category->slug_en) }}">{{ $product->category->category_en }}</a></li>
-        <li><a href="{{ route('subcategory',$product->subcategory->slug_en) }}">{{ $product->subcategory->subcategory_en }}</a></li>
+        @if ($product->subcategory)
+            <li><a href="{{ route('subcategory',$product->subcategory->slug_en) }}">{{ $product->subcategory->subcategory_en }}</a></li>
+        @endif
         <li><a href="{{ route('product',$product->slug_en) }}">{{ $product->name_en }}</a></li>
     </ul>
     <div class="product_single">
@@ -55,21 +57,16 @@
             </table>
             <h4>Ingredients </h4>
             <p>{{ $product->ingredients_en }}</p>
+            @if($product->nutrition_facts . $product->spec_sheets <> '')
             <ul class="lines">
-                <li>
                 @if($product->nutrition_facts <> '')
-                    <a href="uploads/products/nf/{{ $product->nutrition_facts }}" target="_blank">NUTRITION FACTS</a></li>
-                @else
-                    <span>NUTRITION FACTS</span></li>
+                    <li><a href="uploads/products/nf/{{ $product->nutrition_facts }}" target="_blank">NUTRITION FACTS</a></li>
                 @endif
-                </li><li>
                 @if($product->spec_sheets <> '')
-                    <a href="uploads/products/ss/{{ $product->spec_sheets }}" target="_blank">SPEC SHEET</a></li>
-                @else
-                    <span>SPEC SHEET</span></li>
+                    <li><a href="uploads/products/ss/{{ $product->spec_sheets }}" target="_blank">SPEC SHEET</a></li>
                 @endif
-                </li>
             </ul>
+            @endif
         </div>
     </div>
 </div>

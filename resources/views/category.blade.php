@@ -12,7 +12,7 @@
         <li><a href="{{ route('category',$category->slug_en) }}">{{ $category->category_en }}</a></li>
     </ul>
     <div class="subcat">
-    @foreach ($category->subcategories as $subcategory)
+    @foreach ($category->subcategories_p as $subcategory)
         <article>
             <a href="{{ route('subcategory',$subcategory->slug_en) }}">
                 <div @if ($subcategory->productoppal) style="background-image: url(uploads/products/{{ $subcategory->productoppal->img }})" @endif ></div>

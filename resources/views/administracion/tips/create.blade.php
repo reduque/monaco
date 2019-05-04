@@ -26,7 +26,7 @@
         <div class="col-lg-6">
             <div class="form-group{{ $errors->has('tip_en') ? ' has-error' : '' }}">
                 <label>Tip</label>
-                <textarea class="form-control" name="tip_en" rows="6" required autofocus>{{ old('tip_en') }}</textarea>
+                <textarea class="form-control" name="tip_en" rows="8" required autofocus>{{ old('tip_en') }}</textarea>
                 @if ($errors->has('tip_en'))
                     <p class="help-block">{{ $errors->first('tip_en') }}</p>
                 @endif
@@ -36,6 +36,13 @@
             <div class="form-group">
                 <label>Source</label>
                 <input type="text" class="form-control" name="source_en" value="{{ old('source_en') }}" maxlength="60">
+            </div>
+            <div class="form-group">
+                <input type="checkbox" class="" name="active" id="a_a" value="1" @if( old('active',1) == 1 ) checked @endif >&nbsp;&nbsp;<label for="a_a">Active</label>
+            </div>
+            <div class="form-group">
+                <label>Publication date</label>
+                <input type="date" class="form-control" name="publication_date" value="{{ old('publication_date') }}" maxlength="10">
             </div>
         </div>
     </div>

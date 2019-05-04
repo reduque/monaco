@@ -60,6 +60,9 @@
                 <label>Image</label>
                 <div class="slim">
                     <input name="img_en" type="file" accept="image/jpeg, image/png" />
+                    @if($banner->img_en<>'')
+                        <img src="uploads/banners_brands/{{ $banner->img_en }}">
+                    @endif
                 </div>
                 <label><span>Min size 1024 x 516 px | JPG o PNG</span></label>
             </div>
@@ -69,9 +72,6 @@
                 <div class="form-group">
                     <input type="checkbox" class="" name="active" id="a_a" value="1" @if(old('active', $banner->active)==1) checked @endif >&nbsp;&nbsp;<label for="a_a">Active</label>
                 </div>
-                @if($banner->img_en<>'')
-                    <p><img src="uploads/banners_brands/{{ $banner->img_en }}" style="max-width:100%"></p>
-                @endif
             </div>
         </div>
     

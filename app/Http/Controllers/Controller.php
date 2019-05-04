@@ -30,6 +30,16 @@ class Controller extends BaseController
         return $fileName;
     }
 
+    public function saveFile2($file, $path, $fileName = "", $extension="")
+    {
+        if ($file) {
+            if($extension=="") $extension=$file->getClientOriginalExtension();
+            $fileName= $fileName . "." . $extension;
+            $file->storeAs($path, $fileName ,'public_html');
+        }
+        return $fileName;
+    }
+
     public function deleteFile($file)
     {
         try {

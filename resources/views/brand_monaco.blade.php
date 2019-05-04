@@ -10,13 +10,8 @@
         <li><a href="{{ route('brands') }}">Products</a></li>
         <li><a href="{{ route('brand_monaco') }}">Monaco</a></li>
     </ul>
-    <ul class="lines">
-        @foreach ($lines as $line)
-            <li><a href="{{ route('line',$line->slug_en) }}">{{ $line->line_en }}</a></li>
-        @endforeach
-    </ul>
+    @include('partials._divisions')
     <div class="caregories">
-        <a href="">All</a>
     @foreach ($catetories as $category)
         <a href="{{ route('category',$category->slug_en) }}">{{ $category->category_en }}</a>
     @endforeach

@@ -1,0 +1,28 @@
+.planas{
+	background: $fondo_crema;
+    @extend %padding_interno;
+    h2{
+        margin: 0;
+        color: $color_azul;
+        font-size: 40px;
+        font-family: $questa_granderegular;
+        font-weight: normal;
+    }
+    h3{
+        margin: 0;
+        padding-top: 30px;
+        padding-bottom: 20px;
+        font-size: 26px;
+    }
+    .floatd{
+        width: 616px;
+        max-width: 100%;
+    }
+    *{
+        font-weight: 300;
+        color: $gris;
+        font-size: 18px;
+        line-height: 1.2;
+    }
+    ul li{margin-bottom: 10px;}
+}

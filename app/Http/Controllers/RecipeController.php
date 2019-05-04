@@ -14,7 +14,8 @@ class RecipeController extends Controller
     }
     public function category($slug)
     {
+        $categories=RecipesCategory::get();
         $category=RecipesCategory::where('slug_en',$slug)->first();
-        return view('recipes',['seccion' => 'recipes', 'category' => $category]);
+        return view('recipes',['seccion' => 'recipes', 'categories' => $categories, 'category' => $category]);
     }
 }

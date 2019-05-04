@@ -24,5 +24,12 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+        /*
+        if(config('app.env') <> 'local'){
+            echo 'ee';
+            exit;
+            \Illuminate\Support\Facades\URL::forceScheme('https');
+        }
+        */
     }
 }

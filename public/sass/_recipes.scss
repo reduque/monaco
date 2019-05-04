@@ -1,3 +1,17 @@
+a.x{
+    position: absolute;
+    text-indent: -999px;
+    right: 16px;
+    display: block;
+    width: 50px;
+    height: 50px;
+    background: url(../img/x.svg) no-repeat center center / 100% 100%;
+    display: none;
+    &:hover{
+        background-size: 200% 200%;
+    }
+}
+
 .r_cat{
     .bloque{
         float: left;
@@ -92,20 +106,49 @@
     background-position: right 72px bottom -100px;
     div.contenedor{
         position: relative;
+        .x{
+            top: 0;
+        }
     }
-    h1{
-        margin: 0;
-        font-size: 21px;
-        color: #FFF;
-        line-height: 23px;
-        padding-bottom: 15px;
-        &:after{
-            content: "";
-            display: block;
-            background: #FFF;
-            height: 1px;
-            width: 36px;
-            margin-top: 15px;
+
+    .categories{
+        @include ul_limpio();
+        border: 1px solid #fff;
+        display: inline-block;
+        height: 30px;
+        margin: 0 0 25px 0;
+        &:hover{
+            a.activo{
+                padding: 0 6px;font-weight: normal; 
+                //color: $gris;
+            }
+        }
+        li{
+            padding: 6px 0;
+            float: left;
+            a{
+                display: block;
+                font-size: 15px;
+                line-height: 18px;
+                //color: $gris;
+                color: #FFF;
+                padding: 0 6px;
+                border-left: 1px solid #fff;
+                text-transform: uppercase;
+                &.activo{
+                    font-weight: bold;
+                    padding: 0 5px;
+                    color: #fff;
+                }
+                &:hover{
+                    font-weight: bold!important;
+                    padding: 0 5px!important;
+                    color: #fff!important;
+                }
+            }
+            &:first-child a, &:first-child span{
+                border: none;
+            }
         }
     }
     div.lista_r{
@@ -118,6 +161,7 @@
             font-size: 30px;
             line-height: 36px;
             &:hover{
+                font-size: 29px;
                 font-family: $roboto;
                 font-weight: bold;
             }
@@ -126,15 +170,16 @@
     @media only screen and (max-width:800px){
         background-size: 90px auto;
         background-position: right 40px bottom -50px;
+        .categories{
+            li a{
+                font-size: 13px;
+            }
+        }
     }
 }
 .recipes_body{
     article{
         position: relative;
-        .ancla{
-            position: absolute;
-            top: -83px;
-        }
         .foto{
             width: 50%;
             height: 516px;
@@ -201,6 +246,7 @@
             }
         }
         .mas_info{
+            position: relative;
             height: 516px;
             @extend %box-sizing;
             @extend %padding_interno;
@@ -211,7 +257,7 @@
             &.visible{
                 display: block;
             }
-            .mas_info2{position: relative; padding-top: 60px;}
+            .mas_info2{position: relative; padding-top: 6px;}
             .textos{
                 .ingredientes{
                     margin-top: -154px;
@@ -219,6 +265,8 @@
             }
             .x{
                 display: block;
+                right: 60px;
+                bottom: 48px;
             }
         }
         &:nth-child(odd){
@@ -259,9 +307,15 @@
             .subir{
                 height: 25px;
                 display: block;
-                background: url(../img/subir.svg) no-repeat right 0 / auto 100%;
+                background: url(../img/subir.svg) no-repeat;
+                background-position: right 18px top 2px;
+                background-size: auto 100%;
                 text-indent: -999px;
                 margin-top: -10px;
+                &:hover{
+                    background-position: right 0;
+                    background-size: auto 180%;
+                }
             }
         }
         @media only screen and (max-width:900px){
@@ -305,17 +359,3 @@ a.see_more{
 }
 
 
-a.x{
-    position: absolute;
-    text-indent: -999px;
-    top: 0;
-    right: 0;
-    display: block;
-    width: 50px;
-    height: 50px;
-    background: url(../img/x.svg) no-repeat center center / 100% 100%;
-    display: none;
-    &:hover{
-        background-size: 200% 200%;
-    }
-}

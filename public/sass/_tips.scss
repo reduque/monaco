@@ -1,6 +1,6 @@
 .tips{
     .banner{
-        background: url(../img/tips.jpg) no-repeat center 0 / auto 100%;
+        background: url(../img/tips.jpg) no-repeat right 0 / auto 100%;
         height: 516px;
         h1{
             margin: 0;
@@ -9,7 +9,16 @@
             font-family: $questa_granderegular;
             font-weight: normal;
             font-size: 66px;
-            line-height: 69px;        }
+            line-height: 69px;
+        }
+        @media only screen and (max-width:990px){
+            h1 .enter{
+                display: none;
+            }
+        }
+        @media only screen and (max-width:670px){
+            background-position: right -45px top 0;
+        }
     }
     .contenedor{
         background: $fondo_crema url(../img/fondo_tips.gif) repeat-y center 0;
@@ -43,7 +52,7 @@
                 width: 76.5%;
                 margin: 0;
                 font-size: 23px;
-                line-height: 25px;
+                line-height: 28px;
                 font-weight: 300;
                 color: $gris;
                 span{

@@ -13,8 +13,8 @@ class Subcategory extends Model
 	    return $this->belongsTo('App\Product','productoppal_id');
 	}
 
-    public function products(){
-	    return $this->hasMany('App\Product');
+	public function products(){
+	    return $this->hasMany('App\Product')->where('line_id',session('v_line_id'));
 	}
 
 	public function category(){
