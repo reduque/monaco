@@ -4,6 +4,7 @@
     width: 100%;
     background: #000;
     height: 200px;
+    z-index: 0;
 }
 .home_cuote{
     background: #000;
@@ -139,7 +140,7 @@
         height: 35px;
         @extend %ullimpio;
         li{
-            text-indent: -999px;
+            text-indent: -999999px;
             float: left;
             margin:14px 4px 0 4px;
             border: $color solid 2px;

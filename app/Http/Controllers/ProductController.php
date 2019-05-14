@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\BannerBrand;
-use App\OtherBrand;
 use App\Line;
 use App\Brand;
 use App\Category;
@@ -16,8 +15,8 @@ class ProductController extends Controller
     public function brands()
     {
         $banners=BannerBrand::where('active',1)->get();
-        $brands=Brand::where('id','<>',1)->get();
-        $otherbrands=OtherBrand::get();
+        $brands=Brand::where('type','Private Label')->get();
+        $otherbrands=Brand::where('type','Other Brands')->get();
         return view('brands',['seccion' => 'products', 'banners' => $banners, 'otherbrands' => $otherbrands, 'brands' => $brands]);
     }
     
@@ -62,15 +61,23 @@ class ProductController extends Controller
         return view('product',['seccion' => 'products', 'product' => $product]);
     }
     // otras marcas
-    public function brand($slug)
+    public function brand($slug,$slug_cat='')
     {
         if(!$brand=Brand::where('slug_en', $slug)->first()){
             return redirect()->route('brands');
         }
-session(['v_line_id' => 1]);
-$catetories2=Category::where('brand_id',1)->has('products')->get();
-        $catetories=Category::where('brand_id',$brand->id)->get();
-        return view('brand_pl',['seccion' => 'products', 'brand' => $brand, 'catetories' => $catetories, 'catetories2' => $catetories2]);
+
+        $categories=Category::where('brand_id',$brand->id)->has('products_pl')->get();
+        if($categories->count()==0){
+            return redirect()->route('brands');
+        }
+
+        if($slug_cat==''){
+            $categories2=Category::where('brand_id',$brand->id)->has('products_pl')->get();
+        }else{
+            $categories2=Category::where('brand_id',$brand->id)->where('slug_en',$slug_cat)->get();            
+        }
+        return view('brand_pl',['seccion' => 'products', 'brand' => $brand, 'categories' => $categories, 'categories2' => $categories2, 'slug_cat' => $slug_cat]);
     }
 
 }

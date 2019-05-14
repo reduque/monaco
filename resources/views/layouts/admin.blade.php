@@ -56,7 +56,10 @@
                         <a href="{{ route("banners_brands.index") }}"><i class="fa fa-fw fa-pencil"></i> @lang('administracion.banners_brands')</a>
                     </li>
                     <li>
-                        <a href="{{ route("products.index") }}"><i class="fa fa-fw fa-pencil"></i> @lang('administracion.products')</a>
+                        <a href="{{ route("categories.index") }}"><i class="fa fa-fw fa-pencil"></i> @lang('administracion.categories')</a>
+                    </li>
+                    <li>
+                        <a href="{{ route("select_brand") }}?b=AShLo"><i class="fa fa-fw fa-pencil"></i> @lang('administracion.products')</a>
                     </li>
 
                     <li>

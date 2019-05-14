@@ -7,6 +7,9 @@ use App\Banner;
 use App\Tip;
 use App\Recipe;
 use App\Line;
+use App\Product;
+use View;
+
 
 class HomeController extends Controller
 {
@@ -16,6 +19,15 @@ class HomeController extends Controller
         $tip=Tip::inRandomOrder()->first();
         $recipe=Recipe::where('active',1)->whereDate('publication_date','<=',date('Y-m-d'))->orderby('publication_date','desc')->first();
         return view('home',['seccion' => 'home', 'banners' => $banners, 'tip' => $tip, 'recipe' => $recipe]);
+    }
+
+    public function buscar_ajax(Request $request)
+    {
+        $products=Product::where('name_en','like','%' . $request->q . "%")->get();
+        $recipes=Recipe::where('title_en','like','%' . $request->q . "%")->get();
+        $view=View::make('ajax.buscar_ajax', ['q'=>$request->q, 'products'=>$products, 'recipes' => $recipes]);
+        $data=$view->render();
+        return ['status' => 'exito', "data" => $data];
     }
 
     public function our_story()

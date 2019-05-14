@@ -24,6 +24,13 @@
 </head>
 <body>
     <div class="cuerpo">
+        <div class="buscador">
+            <div class="interno">
+                <input type="text" name="txt_serach" id="txt_serach" placeholder="Search">
+                <a href="" class="cerrar_buscador">Close</a>
+                <div class="resultado"></div>
+            </div>
+        </div>
         <header>
             <div class="tabla">
                 <ul>
@@ -106,6 +113,7 @@
     <script src="js/jquery-ui.js"></script>
     <script src="js/modernizr-3.5.0.min.js"></script>
     <script>
+        var timeout;
         $(document).ready(function(){
             $('header .menu').click(function(e){
                 e.preventDefault();
@@ -120,6 +128,40 @@
                 $.get( "{{ route('contact') }}", function( data ) {
                     document.location=data;
                 });
+            })
+            $('.cerrar_buscador').click(function(e){
+                e.preventDefault();
+                $('.buscador').slideUp(300,function(){
+                    $('body').removeClass('verbuscador');
+                });
+            })
+            $('.lupa').click(function(e){
+                e.preventDefault();
+                $('html,body').animate({scrollTop:0},500);
+                $('body').addClass('verbuscador');
+                $('.buscador').slideDown(300);
+                $('.resultado').html('');
+                $('#txt_serach').val('').focus();
+            })
+
+            $('#txt_serach').keyup(function(){
+                $('.resultado').html('');
+                clearTimeout(timeout);
+                timeout = setTimeout(function(){
+                    if($('#txt_serach').val().length>2){
+                        $.ajax({
+                            type: "GET",
+                            dataType: "json",
+                            url: "buscar_ajax?q=" + escape($('#txt_serach').val()),
+                            beforeSend : function(){
+                                $('.resultado').addClass('cargando');
+                            },
+                            success: function(data){
+                                $('.resultado').removeClass('cargando').html(data.data);
+                            }
+                        });
+                    }
+                },500);
             })
         })
     </script>

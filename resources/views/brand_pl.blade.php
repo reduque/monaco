@@ -5,20 +5,20 @@
 
 @section('content')
 <div class="productos">
-    <div class="caregories_pl" style="background-image: url(uploads/brands/{{ $brand->img }})">
+    <div class="caregories_pl" style="background-image: @if($categories[0]->brand->type=='Private Label') url(uploads/brands/{{ $categories[0]->brand->img }}) @else url(uploads/other_brads/{{ $categories[0]->brand->img }}) @endif">
         <h1>Categories</h1>
-        <a href="" class="activo">All</a>
-    @foreach ($catetories as $category)
-        <a href="{{ route('category',$category->slug_en) }}">{{ $category->category_en }}</a>
+        <a href="{{ route('brand',$categories[0]->brand->slug_en) }}" @if($slug_cat=="") class="activo" @endif>All</a>
+    @foreach ($categories as $category)
+        <a href="{{ route('brand',[$category->brand->slug_en, $category->slug_en]) }}" @if($category->slug_en==$slug_cat) class="activo" @endif>{{ $category->category_en }}</a>
     @endforeach
     </div>
 
     <div class="subcategories">
-    @foreach ($catetories2 as $category)
+    @foreach ($categories2 as $category)
         <div class="separador"></div>
         <div class="sub_bloques">
             <h2>{{$category->category_en}}</h2>
-        @foreach ($category->products as $product)
+        @foreach ($category->products_pl as $product)
             <article>
                 <a href="{{ route('product',$product->slug_en) }}">
                     <div style="background-image: url(uploads/products/{{ $product->img }})"></div>

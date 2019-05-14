@@ -22,6 +22,9 @@ Route::get('/contact/',function(){
 	echo 'mailto:sales@monacofoods.com';
 })->name('contact');
 
+Route::get('buscar_ajax/', 'HomeController@buscar_ajax');
+
+
 Route::get('our-story/', 'HomeController@our_story')->name('our_story');
 Route::get('divisions/', 'HomeController@divisions')->name('divisions');
 Route::get('reach-us/', 'HomeController@reach_us')->name('reach_us');
@@ -49,7 +52,6 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::namespace('administracion')->prefix('admin')->group(function () {
     	Route::get('/','HomeController@index')->name('administracion_home');
 
-	//usuarios
 	    Route::get('usuarios_eliminar/{id}', 'UserController@destroy')->name('usuarios_eliminar');
 	    Route::get('edit_password/{id}', 'UserController@edit_password')->name('edit_password');
 	    Route::put('update_password/{id}', 'UserController@update_password')->name('update_password');
@@ -67,6 +69,13 @@ Route::group(['middleware' => 'auth'], function () {
 	    Route::get('banners_brands_eliminar/{id}', 'BannerBrandController@destroy')->name('banners_brands_eliminar');
 	    Route::resource('banners_brands', 'BannerBrandController');
 
+	    Route::get('categories_eliminar/{id}', 'CategoryController@destroy')->name('categories_eliminar');
+	    Route::resource('categories', 'CategoryController');
+
+		Route::get('subcategories_eliminar/{id}', 'SubcategoryController@destroy')->name('subcategories_eliminar');
+	    Route::resource('subcategories', 'SubcategoryController');
+
+	    Route::get('select_brand', 'ProductController@select_brand')->name('select_brand');
 	    Route::get('products_eliminar/{id}', 'ProductController@destroy')->name('products_eliminar');
 	    Route::resource('products', 'ProductController');
 

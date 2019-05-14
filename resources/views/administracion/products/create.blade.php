@@ -44,18 +44,9 @@
             </div>
         </div>
     </div>
+<input type="hidden" name="brand_id" value="1">
     <div class="row">
-        <div class="col-lg-4">
-            <div class="form-group">
-                <label>Brand</label>
-                <select class="form-control" name="brand_id">
-                @foreach($brands as $brand)
-                    <option value="{{ $brand->id }}" @if($brand->id == old('brand_id')) selected @endif>{{ $brand->brand_en }}</option>
-                @endforeach
-                </select>
-            </div>
-        </div>
-        <div class="col-lg-4">
+        <div class="col-lg-3">
             <div class="form-group">
                 <label>Subcategory</label>
                 <select class="form-control" name="subcategory_id">
@@ -65,7 +56,7 @@
                 </select>
             </div>
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-3">
             <div class="form-group">
                 <label>Line</label>
                 <select class="form-control" name="line_id">
@@ -75,41 +66,39 @@
                 </select>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-4">
+        <div class="col-lg-3">
             <div class="form-group">
                 <label>Country of Origin</label>
                 <input type="text" class="form-control" name="country" value="{{ old('country') }}" maxlength="60">
             </div>
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-3">
             <div class="form-group">
                 <label>Size</label>
                 <input type="text" class="form-control" name="size" value="{{ old('size') }}" maxlength="60">
             </div>
         </div>
-        <div class="col-lg-4">
+    </div>
+    <div class="row">
+        <div class="col-lg-3">
             <div class="form-group">
                 <label>Pack</label>
                 <input type="text" class="form-control" name="pack" value="{{ old('pack') }}" maxlength="60">
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-4">
+        <div class="col-lg-3">
             <div class="form-group">
                 <label>Ti/Hi</label>
                 <input type="text" class="form-control" name="ti_hi" value="{{ old('ti_hi') }}" maxlength="60">
             </div>
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-3">
             <div class="form-group">
                 <label>Bar Code</label>
                 <input type="text" class="form-control" name="bar_code" value="{{ old('bar_code') }}" maxlength="60">
             </div>
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-3">
             <div class="form-group">
                 <label>Shelf Life</label>
                 <input type="text" class="form-control" name="shelf_life_en" value="{{ old('shelf_life_en') }}" maxlength="60">
@@ -125,7 +114,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-3">
             <div class="form-group">
                 <label>Image</label>
                 <div class="slim">
@@ -134,6 +123,7 @@
                 <label><span>Min size 370 x 400 px | JPG o PNG</span></label>
             </div>
         </div>
+        <div class="col-lg-3"></div>
         <div class="col-lg-6">
             <div class="form-group">
                 <label>Nutrition Facts</label>

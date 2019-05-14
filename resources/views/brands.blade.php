@@ -35,7 +35,7 @@
         <div>
             <ul>
             @foreach ($otherbrands as $brand)
-                <li><a href="" data-img="{{ $brand->img }}">{{ $brand->brand }}</a></li>
+                <li><a href="{{ route('brand',[$brand->slug_en]) }}" data-img="{{ $brand->img }}">{{ $brand->brand_en }}</a></li>
                 @php
                 if($act == $medio) echo "</ul></div><div><ul>";
                 $act++;

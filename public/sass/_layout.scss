@@ -27,7 +27,7 @@ header{
 				.menu{
 					display: block;
 					color: #FFF;
-					text-indent: -999px;
+					text-indent: -999999px;
 					background:url(../img/hamburguesa.svg) no-repeat 40px 30px / 32px auto;
 					height: 100%;
 					&:hover{
@@ -37,7 +37,7 @@ header{
 				.lupa{
 					display: block;
 					color: #FFF;
-					text-indent: -999px;
+					text-indent: -999999px;
 					background:url(../img/lupa.svg) no-repeat right 30px / 32px auto;
 					border-right: 40px solid transparent;
 					height: 100%;
@@ -63,7 +63,7 @@ header{
 			width: 100%;
 		}
 		a.cerrar_hamburguesa{
-			text-indent: -999px;
+			text-indent: -999999px;
 			background: url(../img/hamburguesa_b.svg) no-repeat 40px 30px / 32px auto;
 			position: absolute;
 			top: 0;
@@ -237,4 +237,80 @@ footer{
 			font-size: 10px;
 		}
 	}
+}
+.cuerpo header{
+	@include transition(visibility 0s, opacity 0.5s);
+}
+body{
+	&.verbuscador{
+		.cuerpo{
+			padding-top:0;
+			header{
+				visibility: hidden;
+				opacity: 0;
+			}
+		}
+	}
+}
+.buscador{
+	background:#FFF;
+	position: relative;
+	z-index: 1;
+	display: none;
+	@extend %padding_interno;
+	.interno{position: relative;}
+	a.cerrar_buscador{
+		position: absolute;
+		text-indent: -99999px;
+		right: 0;
+		top: 0;
+		display: block;
+		width: 50px;
+		height: 50px;
+		background: url(../img/x_d.svg) no-repeat center center / 100% 100%;
+		&:hover{
+			background-size: 200% 200%;
+		}
+	}
+	input{
+		padding: 10px;
+		border: 0;
+		width: calc(100% - 90px);
+		font-size: 30px;
+		border: none;
+		outline: none;
+	}
+	.resultado{
+		margin-top: 20px;
+		&.cargando{
+			height: 30px;
+			background: url(../img/loading.gif) no-repeat center;
+		}
+		.t1{
+			font-weight: bold;
+			font-size: 45px;
+		}
+		.t2{
+			font-weight: bold;
+			font-size: 24px;
+			padding: 5px 0;
+		}
+		.bloque{
+			padding-top: 30px;
+			h4{
+				margin: 0;
+				font-weight: 600;
+			}
+			a{
+				font-size: 26px;
+				display: block;
+				&:hover{
+					font-weight: bold;
+				}
+			}
+		}
+	}
+
+
+	
 }

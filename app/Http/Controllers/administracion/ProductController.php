@@ -5,27 +5,40 @@ namespace App\Http\Controllers\administracion;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+use App\Brand;
 use App\Product;
 use App\Category;
 use App\Subcategory;
 use App\Line;
-use App\Brand;
 use Session;
 
 class ProductController extends Controller
 {
-
+    public function select_brand(){
+        $brands=Brand::get();
+        return view('administracion.products.select_brand',['brands' => $brands]);
+    }
     public function index(Request $request)
     {
+        if(!Session::has('p_brand_id')){
+            session(['p_brand_id' => Brand::first()->id]);
+            Session::forget('q_category_id');
+        }
+        if($request->b){
+            session(['p_brand_id' => decodifica($request->b)]);
+            Session::forget('q_category_id');
+        }
+        $brand=Brand::find(session('p_brand_id'));
+
         if(!Session::has('q_category_id')){
-            session(['q_category_id' => Category::first()->id]);
+            session(['q_category_id' => Category::where('brand_id',session('p_brand_id'))->first()->id]);
         }
         if($request->q){
             session(['q_category_id' => decodifica($request->q)]);
         }
-        $categories=Category::get();
+        $categories=Category::where('brand_id',session('p_brand_id'))->get();
         $products=Product::where('category_id', session('q_category_id'))->paginate(25);
-        return view('administracion.products.index',['products' => $products, 'categories' => $categories]);
+        return view('administracion.products.index',['products' => $products, 'categories' => $categories, 'brand' => $brand]);
     }
 
     public function create()
@@ -33,8 +46,9 @@ class ProductController extends Controller
         $category=Category::find(session('q_category_id'));
         $subcategories=Subcategory::where('category_id',session('q_category_id'))->get();
         $lines=Line::get();
-        $brands=Brand::get();
-        return view('administracion.products.create',['category' => $category,'subcategories' => $subcategories,'lines' => $lines,'brands' => $brands]);
+        return view('administracion.products.create',['category' => $category,'subcategories' => $subcategories,'lines' => $lines]);
+        //$brands=Brand::get();
+        //return view('administracion.products.create',['category' => $category,'subcategories' => $subcategories,'lines' => $lines,'brands' => $brands]);
     }
 
     public function store(Request $request)
@@ -62,7 +76,7 @@ class ProductController extends Controller
             }
             $product=Product::create([
                 'name_en' => $request->name_en,
-                'slug_en' => str_slug($request->name_en,"-"),
+                'slug_en' => str_slug($request->name_en . ' ' . $request->size,"-"),
                 'description_en' => $request->description_en,
                 'country' => $request->country,
                 'size' => $request->size,
@@ -71,7 +85,7 @@ class ProductController extends Controller
                 'bar_code' => $request->bar_code,
                 'shelf_life_en' => $request->shelf_life_en,
                 'ingredients_en' => $request->ingredients_en,
-                'brand_id' => $request->brand_id,
+                'brand_id' => session('p_brand_id'),
                 'category_id' => $request->category_id,
                 'subcategory_id' => $request->subcategory_id,
                 'line_id' => $request->line_id,
@@ -100,8 +114,9 @@ class ProductController extends Controller
         $category=Category::find(session('q_category_id'));
         $subcategories=Subcategory::where('category_id',session('q_category_id'))->get();
         $lines=Line::get();
-        $brands=Brand::get();
-        return view('administracion.products.edit',['product' => $product,'category' => $category,'subcategories' => $subcategories,'lines' => $lines,'brands' => $brands]);
+        //$brands=Brand::get();
+        //return view('administracion.products.edit',['product' => $product,'category' => $category,'subcategories' => $subcategories,'lines' => $lines,'brands' => $brands]);
+        return view('administracion.products.edit',['product' => $product,'category' => $category,'subcategories' => $subcategories,'lines' => $lines]);
 
 
         return view('administracion.products.edit',['product' => $product]);
@@ -140,7 +155,7 @@ class ProductController extends Controller
 
             $product->update([
                 'name_en' => $request->name_en,
-                'slug_en' => str_slug($request->name_en,"-"),
+                'slug_en' => str_slug($request->name_en . ' ' . $request->size,"-"),
                 'description_en' => $request->description_en,
                 'country' => $request->country,
                 'size' => $request->size,

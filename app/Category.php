@@ -9,6 +9,9 @@ class Category extends Model
     protected $table = 'categories';
 	protected $guarded = ['id'];
 
+	public function brand(){
+	    return $this->belongsTo('App\Brand');
+	}
 	public function subcategories(){
 	    return $this->hasMany('App\Subcategory')->where('active',1);
 	}

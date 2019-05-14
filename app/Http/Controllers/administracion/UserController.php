@@ -32,7 +32,9 @@ class UserController extends Controller
             if ($validator->fails()){
                 return back()->withErrors($validator)->withInput();
             }
-            $usuario=User::create($request->toArray());
+            $usuario=$request->toArray();
+            $usuario['password']=bcrypt($usuario['password']);
+            $usuario=User::create($usuario);
             return redirect()->route('usuarios.edit', codifica($usuario->id))->with("notificacion","Se ha guardado correctamente su información");
 
         } catch (Exception $e) {

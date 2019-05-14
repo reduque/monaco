@@ -4,7 +4,7 @@
 
 <div class="row">
      <div class="col-lg-6">
-        <h1 class="page-header">@lang('administracion.products')</h1>
+        <h1 class="page-header">@lang('administracion.products') ({{ $brand->brand_en }})</h1>
     </div>
     <div class="col-lg-12">
         <ol class="breadcrumb">
@@ -15,19 +15,19 @@
 </div>
 <div class="row">
     <div class="col-lg-5">
-            <form role="search" action="" name="f_search">
-                <div class="input-group">
-                    <select name="q" class="form-control" onchange="document.f_search.submit();">
-                    @foreach($categories as $category)
-                        <option value="{{ codifica($category->id) }}" @if($category->id == session('q_category_id')) selected @endif>{{ $category->category_en }}</option>
-                    @endforeach
-                    </select>
-                    <span class="input-group-btn">
-                    <button class="btn btn-default" type="submit">Buscar</button>
-                    </span>
-                </div>
-            </form>
-        </div>
+        <form role="search" action="" name="f_search">
+            <div class="input-group">
+                <select name="q" class="form-control" onchange="document.f_search.submit();">
+                @foreach($categories as $category)
+                    <option value="{{ codifica($category->id) }}" @if($category->id == session('q_category_id')) selected @endif>{{ $category->category_en }}</option>
+                @endforeach
+                </select>
+                <span class="input-group-btn">
+                <button class="btn btn-default" type="submit">Search</button>
+                </span>
+            </div>
+        </form>
+    </div>
         
     <div class="col-lg-5">
     @if($notificacion_error=Session::get('notificacion_error'))
@@ -57,8 +57,8 @@
                     <tr>
                         <td><a href="{{ route('products.edit', codifica($product->id) ) }}" title="@lang('administracion.editar')">{{ $product->name_en }}</a></td>
                         <td><a href="{{ route('products.edit', codifica($product->id) ) }}" title="@lang('administracion.editar')">{{ $product->category->category_en }}</a></td>
-                        <td><a href="{{ route('products.edit', codifica($product->id) ) }}" title="@lang('administracion.editar')">{{ $product->subcategory->subcategory_en }}</a></td>
-                        <td><a href="{{ route('products.edit', codifica($product->id) ) }}" title="@lang('administracion.editar')">{{ $product->line->line_en }}</a></td>
+                        <td><a href="{{ route('products.edit', codifica($product->id) ) }}" title="@lang('administracion.editar')">@if($product->subcategory) {{ $product->subcategory->subcategory_en }} @endif</a></td>
+                        <td><a href="{{ route('products.edit', codifica($product->id) ) }}" title="@lang('administracion.editar')">@if($product->line) {{ $product->line->line_en }} @endif</a></td>
                         <td>
                             <a href="{{ route('products.edit', codifica($product->id) ) }}" title="@lang('administracion.editar')"><i class="fa fa-fw fa-edit"></i></a>
                             <a href="{{ route('products_eliminar', codifica($product->id) ) }}" title="@lang('administracion.eliminar')"><i class="fa fa-fw fa-ban bloquear"></i></a>

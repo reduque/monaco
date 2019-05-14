@@ -8,11 +8,16 @@
 <div class="productos sin_pie">
     <ul class="migas">
         <li><a href="{{ route('brands') }}">Products</a></li>
+    @if ($product->brand->id==1)
         <li><a href="{{ route('brand_monaco') }}">{{ $product->brand->brand_en }}</a></li>
         <li><a href="{{ route('category',$product->category->slug_en) }}">{{ $product->category->category_en }}</a></li>
         @if ($product->subcategory)
             <li><a href="{{ route('subcategory',$product->subcategory->slug_en) }}">{{ $product->subcategory->subcategory_en }}</a></li>
         @endif
+    @else
+        <li><a href="{{ route('brand',[$product->brand->slug_en]) }}">{{ $product->brand->brand_en }}</a></li>
+        <li><a href="{{ route('brand',[$product->brand->slug_en, $product->category->slug_en]) }}">{{ $product->category->category_en }}</a></li>
+    @endif
         <li><a href="{{ route('product',$product->slug_en) }}">{{ $product->name_en }}</a></li>
     </ul>
     <div class="product_single">
