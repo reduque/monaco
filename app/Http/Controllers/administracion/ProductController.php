@@ -10,6 +10,8 @@ use App\Product;
 use App\Category;
 use App\Subcategory;
 use App\Line;
+use App\RelatedProduct;
+use View;
 use Session;
 
 class ProductController extends Controller
@@ -37,7 +39,7 @@ class ProductController extends Controller
             session(['q_category_id' => decodifica($request->q)]);
         }
         $categories=Category::where('brand_id',session('p_brand_id'))->get();
-        $products=Product::where('category_id', session('q_category_id'))->paginate(25);
+        $products=Product::where('category_id', session('q_category_id'))->paginate(50);
         return view('administracion.products.index',['products' => $products, 'categories' => $categories, 'brand' => $brand]);
     }
 
@@ -92,6 +94,11 @@ class ProductController extends Controller
                 'img' => $img,
                 'nutrition_facts' => $nutrition_facts,
                 'spec_sheets' => $spec_sheets,
+                'name_es' => $request->name_es,
+                'slug_es' => str_slug($request->name_es . ' ' . $request->size,"-"),
+                'description_es' => $request->description_es,
+                'shelf_life_es' => $request->shelf_life_es,
+                'ingredients_es' => $request->ingredients_es,
             ]);
             return redirect()->route('products.edit', codifica($product->id))->with("notificacion", __('administracion.grabado_exito') );
 
@@ -110,6 +117,7 @@ class ProductController extends Controller
     {
         $id=decodifica($id);
         $product=Product::find($id);
+        session(['product_id' => $id]);
 
         $category=Category::find(session('q_category_id'));
         $subcategories=Subcategory::where('category_id',session('q_category_id'))->get();
@@ -170,6 +178,11 @@ class ProductController extends Controller
                 'img' => $img,
                 'nutrition_facts' => $nutrition_facts,
                 'spec_sheets' => $spec_sheets,
+                'name_es' => $request->name_es,
+                'slug_es' => str_slug($request->name_es . ' ' . $request->size,"-"),
+                'description_es' => $request->description_es,
+                'shelf_life_es' => $request->shelf_life_es,
+                'ingredients_es' => $request->ingredients_es,
             ]);
             return redirect()->route('products.edit', codifica($id))->with("notificacion", __('administracion.grabado_exito') );
 
@@ -201,5 +214,31 @@ class ProductController extends Controller
         } catch (\Illuminate\Database\QueryException $e) {
             return back()->with("notificacion_error", __('administracion.error_eliminando') );
         }
+    }
+
+    public function related_products(){
+        $product=Product::find(session('product_id'));
+        $products=Product::where("brand_id",session('p_brand_id'))->where('id','<>',session('product_id'))->get();
+        return view('administracion.products.related_products',['product' => $product, 'products' => $products]);
+
+    }
+    public function related_products_ajax(Request $request){
+        $products=Product::where("brand_id",session('p_brand_id'))->where('id','<>',session('product_id'))->buscar($request->q)->get();
+        $view=View::make('administracion.products.ajax', ['products'=>$products]);
+        $data=$view->render();
+        return ['status' => 'exito', "data" => $data];
+
+    }
+
+    public function related_marcar($id,$accion){
+        if($accion==1){
+            RelatedProduct::create([
+                'product_id' => session('product_id'),
+                'related_id' => decodifica($id)
+            ]);
+        }else{
+            RelatedProduct::where('product_id',session('product_id'))->where('related_id',decodifica($id))->delete();
+        }
+        return back();
     }
 }

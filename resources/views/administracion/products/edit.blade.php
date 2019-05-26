@@ -33,7 +33,13 @@
 <form role="form" action="{{ route('products.update', codifica($product->id)) }}" method="POST" enctype="multipart/form-data">
     {{ csrf_field() }}
     {{ method_field('PUT') }}
-   
+    <input type="hidden" name="brand_id" value="1">
+    <div class="row">
+        <div class="col-lg-12">
+           <h3><i class="fa fa-globe"></i> English</h3>
+       </div>
+   </div>
+
     <div class="row">
         <div class="col-lg-6">
             <div class="form-group{{ $errors->has('name_en') ? ' has-error' : '' }}">
@@ -51,7 +57,6 @@
             </div>
         </div>
     </div>
-<input type="hidden" name="brand_id" value="1">
     <div class="row">
         <div class="col-lg-3">
             <div class="form-group">
@@ -151,12 +156,48 @@
             </div>
         </div>
     </div>
-    
+    <div class="row">
+        <div class="col-lg-12">
+           <h3><i class="fa fa-globe"></i> Spanish</h3>
+       </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" class="form-control" name="name_es" value="{{ old('name_es',$product->name_es) }}" maxlength="100">
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label>Description</label>
+                <textarea class="form-control" name="description_es">{{ old('description_es',$product->description_es) }}</textarea>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="form-group">
+                <label>Shelf Life</label>
+                <input type="text" class="form-control" name="shelf_life_es" value="{{ old('shelf_life_es',$product->shelf_life_es) }}" maxlength="60">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="form-group">
+                <label>Ingredients</label>
+                <input type="text" class="form-control" name="ingredients_es" value="{{ old('ingredients_es',$product->ingredients_es) }}" maxlength="200">
+            </div>
+        </div>
+    </div>
     <div class="row">
         <div class="col-lg-6">
             <button type="submit" class="btn btn-success"><i class="fa fa-fw fa-check"></i> @lang('administracion.guardar')</button>  
             <a href="{{ route('products.index') }}" class="btn btn-primary"><i class="fa fa-fw fa-list"></i> @lang('administracion.volver_lista')</a> 
             <a href="{{ route('products.create') }}" class="btn btn-primary"><i class="fa fa-fw fa-plus-circle"></i> @lang('administracion.nuevo')</a> 
+            <a href="{{ route('related_products') }}" class="btn btn-primary"><i class="fa fa-check-square"></i>&nbsp; Related products</a> 
             <a href="{{ route('products_eliminar', codifica($product->id) ) }}" class="btn btn-danger"><i class="fa fa-fw fa-ban"></i> @lang('administracion.eliminar')</a>
         </div>
     </div>

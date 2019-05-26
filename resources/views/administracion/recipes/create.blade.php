@@ -27,6 +27,11 @@
 <form role="form" action="{{ route('recipes.store') }}" method="POST">
     {{ csrf_field() }}
     <div class="row">
+        <div class="col-lg-12">
+           <h3><i class="fa fa-globe"></i> English</h3>
+       </div>
+    </div>
+    <div class="row">
         <div class="col-lg-6">
             <div class="form-group{{ $errors->has('title_en') ? ' has-error' : '' }}">
                 <label>Title</label>
@@ -38,7 +43,7 @@
         </div>
         <div class="col-lg-6">
             <div class="form-group">
-                <label>Ingredients</label>
+                <label>Category</label>
                 <select class="form-control" name="recipes_categories_id">
                 @foreach ($categories as $category)
                     <option value="{{ $category->id }}" @if(old('recipes_categories_id')==$category->id) selected @endif>{{ $category->category_en }}</option>
@@ -92,7 +97,47 @@
             </div>
         </div>
     </div>
-
+    <div class="row">
+        <div class="col-lg-12">
+           <h3><i class="fa fa-globe"></i> Spanish</h3>
+       </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label>Title</label>
+                <input type="text" class="form-control" name="title_es" value="{{ old('title_es') }}" maxlength="60">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label>Ingredients</label>
+                <textarea class="form-control" name="ingredients_es" rows="8">{{ old('ingredients_es') }}</textarea>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label>Directions</label>
+                <textarea class="form-control" name="directions_es" rows="8">{{ old('directions_es') }}</textarea>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="form-group">
+                <label>Serves</label>
+                <input type="text" class="form-control" name="serves_es" value="{{ old('serves_es') }}" maxlength="10">
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="form-group">
+                <label>Time</label>
+                <input type="text" class="form-control" name="time_es" value="{{ old('time_es') }}" maxlength="20">
+            </div>
+        </div>
+    </div>
     <div class="row">
         <div class="col-lg-12">
             <button type="submit" class="btn btn-success"><i class="fa fa-fw fa-check"></i> @lang('administracion.guardar')</button>  

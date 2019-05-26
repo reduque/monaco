@@ -30,6 +30,11 @@
 <form role="form" action="{{ route('tips.update', codifica($tip->id)) }}" method="POST">
     {{ csrf_field() }}
     {{ method_field('PUT') }}
+    <div class="row">
+        <div class="col-lg-12">
+           <h3><i class="fa fa-globe"></i> English</h3>
+       </div>
+   </div>
 
     <div class="row">
         <div class="col-lg-6">
@@ -55,7 +60,25 @@
             </div>
         </div>
     </div>
-
+    <div class="row">
+        <div class="col-lg-12">
+           <h3><i class="fa fa-globe"></i> Spanish</h3>
+       </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label>Tip</label>
+                <textarea class="form-control" name="tip_es" rows="8">{{ old('tip_es', $tip->tip_es) }}</textarea>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label>Source</label>
+                <input type="text" class="form-control" name="source_es" value="{{ old('source_es', $tip->source_es) }}" maxlength="60">
+            </div>
+        </div>
+    </div>
 
     <div class="row">
         <div class="col-lg-6">

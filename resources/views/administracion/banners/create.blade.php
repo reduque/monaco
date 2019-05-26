@@ -28,6 +28,12 @@
     {{ csrf_field() }}
     <input type="hidden" name="category_id" value="{{ session('category_id') }}">
     <div class="row">
+        <div class="col-lg-12">
+           <h3><i class="fa fa-globe"></i> English</h3>
+       </div>
+   </div>
+
+    <div class="row">
         <div class="col-lg-6">
             <div class="form-group{{ $errors->has('title_en') ? ' has-error' : '' }}">
                 <label>Title</label>
@@ -64,6 +70,30 @@
         </div>
     </div>
 
+    <div class="row">
+        <div class="col-lg-12">
+           <h3><i class="fa fa-globe"></i> Spanish</h3>
+       </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label>Title</label>
+                <input type="text" class="form-control" name="title_es" value="{{ old('title_es') }}" maxlength="60">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label>Image</label>
+                <div class="slim">
+                    <input name="img_es" type="file" accept="image/jpeg, image/png" />
+                </div>
+                <label><span>Min size 1024 x 516 px | JPG o PNG</span></label>
+            </div>
+        </div>
+    </div>
     <div class="row">
         <div class="col-lg-12">
             <button type="submit" class="btn btn-success"><i class="fa fa-fw fa-check"></i> @lang('administracion.guardar')</button>  

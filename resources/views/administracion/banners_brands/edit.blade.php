@@ -33,7 +33,11 @@
 <form role="form" action="{{ route('banners_brands.update', codifica($banner->id)) }}" method="POST">
     {{ csrf_field() }}
     {{ method_field('PUT') }}
-   
+    <div class="row">
+        <div class="col-lg-12">
+           <h3><i class="fa fa-globe"></i> English</h3>
+       </div>
+    </div>
     <div class="row">
         <div class="col-lg-6">
             <div class="form-group{{ $errors->has('title_en') ? ' has-error' : '' }}">
@@ -75,6 +79,35 @@
             </div>
         </div>
     
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+           <h3><i class="fa fa-globe"></i> Spanish</h3>
+       </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label>Title</label>
+                <input type="text" class="form-control" name="title_es" value="{{ old('title_es', $banner->title_es) }}" maxlength="60">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label>Image</label>
+                <div class="slim">
+                    <input name="img_es" type="file" accept="image/jpeg, image/png" />
+                    @if($banner->img_es<>'')
+                        <img src="uploads/banners_brands/{{ $banner->img_es }}">
+                    @endif
+                </div>
+                <label><span>Min size 1024 x 516 px | JPG o PNG</span></label>
+            </div>
+        </div>
+
     </div>
 
     

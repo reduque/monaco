@@ -47,7 +47,9 @@ class CategoryController extends Controller
             }
             $category=Category::create([
                 'category_en' => $request->category_en,
+                'category_es' => $request->category_es,
                 'slug_en' => str_slug($request->category_en,"-"),
+                'slug_es' => str_slug($request->category_es,"-"),
                 'brand_id' => session('q_brand_id'),
                 'img' => $fileName,
             ]);
@@ -94,7 +96,10 @@ class CategoryController extends Controller
             }
             $category->update([
                 'category_en' => $request->category_en,
+                'category_es' => $request->category_es,
                 'slug_en' => str_slug($request->category_en,"-"),
+                'slug_es' => str_slug($request->category_es,"-"),
+                'brand_id' => session('q_brand_id'),
                 'img' => $fileName,
             ]);
             return redirect()->route('categories.edit', codifica($id))->with("notificacion", __('administracion.grabado_exito') );

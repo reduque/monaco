@@ -28,6 +28,12 @@
 
 <form role="form" action="{{ route('subcategories.store') }}" method="POST">
     {{ csrf_field() }}
+    <div class="row">
+        <div class="col-lg-12">
+           <h3><i class="fa fa-globe"></i> English</h3>
+       </div>
+   </div>
+
     <input type="hidden" name="category_id" value="{{ session('category_id') }}">
     <div class="row">
         <div class="col-lg-6">
@@ -57,7 +63,25 @@
             </div>
         </div>
     </div>
-
+    <div class="row">
+        <div class="col-lg-12">
+           <h3><i class="fa fa-globe"></i> Spanish</h3>
+       </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label>Sub category</label>
+                <input type="text" class="form-control" name="subcategory_es" value="{{ old('subcategory_es') }}" maxlength="100" required autofocus>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label>Description</label>
+                <textarea class="form-control" name="description_es">{{ old('description_es') }}</textarea>
+            </div>
+        </div>
+    </div>
     <div class="row">
         <div class="col-lg-12">
             <button type="submit" class="btn btn-success"><i class="fa fa-fw fa-check"></i> @lang('administracion.guardar')</button>  

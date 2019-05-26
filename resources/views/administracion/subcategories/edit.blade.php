@@ -35,7 +35,12 @@
 <form role="form" action="{{ route('subcategories.update', codifica($subcategory->id)) }}" method="POST">
     {{ csrf_field() }}
     {{ method_field('PUT') }}
-   
+    <div class="row">
+        <div class="col-lg-12">
+           <h3><i class="fa fa-globe"></i> English</h3>
+       </div>
+   </div>
+
     <div class="row">
         <div class="col-lg-6">
             <div class="form-group{{ $errors->has('subcategory_en') ? ' has-error' : '' }}">
@@ -81,7 +86,26 @@
             </div>
         </div>
     </div>
-    
+    <div class="row">
+        <div class="col-lg-12">
+           <h3><i class="fa fa-globe"></i> Spanish</h3>
+       </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label>Sub category</label>
+                <input type="text" class="form-control" name="subcategory_es" value="{{ old('subcategory_es', $subcategory->subcategory_es) }}" maxlength="100">
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label>Description</label>
+                <textarea class="form-control" name="description_es">{{ old('description_es', $subcategory->description_es) }}</textarea>
+            </div>
+        </div>
+    </div>
+
     <div class="row">
         <div class="col-lg-6">
             <button type="submit" class="btn btn-success"><i class="fa fa-fw fa-check"></i> @lang('administracion.guardar')</button>  

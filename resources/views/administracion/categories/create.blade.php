@@ -29,6 +29,11 @@
     <input type="hidden" name="brand_id" value="{{ session('brand_id') }}">
     <div class="row">
         <div class="col-lg-12">
+           <h3><i class="fa fa-globe"></i> English</h3>
+       </div>
+   </div>
+    <div class="row">
+        <div class="col-lg-12">
             <div class="form-group{{ $errors->has('category_en') ? ' has-error' : '' }}">
                 <label>Category</label>
                 <input type="text" class="form-control" name="category_en" value="{{ old('category_en') }}" maxlength="100" required autofocus>
@@ -46,6 +51,19 @@
                     <input name="img" type="file" accept="image/jpeg, image/png" />
                 </div>
                 <label><span>Min size 293 x 310 px | JPG o PNG</span></label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+           <h3><i class="fa fa-globe"></i> Spanish</h3>
+       </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="form-group">
+                <label>Category</label>
+                <input type="text" class="form-control" name="category_es" value="{{ old('category_es') }}" maxlength="100">
             </div>
         </div>
     </div>

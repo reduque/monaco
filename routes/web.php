@@ -77,7 +77,12 @@ Route::group(['middleware' => 'auth'], function () {
 
 	    Route::get('select_brand', 'ProductController@select_brand')->name('select_brand');
 	    Route::get('products_eliminar/{id}', 'ProductController@destroy')->name('products_eliminar');
-	    Route::resource('products', 'ProductController');
+		Route::resource('products', 'ProductController');
+		
+		Route::get('related_products', 'ProductController@related_products')->name('related_products');
+		Route::get('related_products_ajax', 'ProductController@related_products_ajax')->name('related_products_ajax');
+	    Route::get('related_marcar/{id}/{accion}', 'ProductController@related_marcar')->name('related_marcar');
+
 
 	});
 });

@@ -45,6 +45,9 @@ class SubcategoryController extends Controller
                 'subcategory_en' => $request->subcategory_en,
                 'slug_en' => str_slug($request->subcategory_en,"-"),
                 'description_en' => $request->description_en,
+                'subcategory_es' => $request->subcategory_es,
+                'slug_es' => str_slug($request->subcategory_es,"-"),
+                'description_es' => $request->description_es,
                 'img' => $fileName,
             ]);
             return redirect()->route('subcategories.edit', codifica($Subcategory->id))->with("notificacion", __('administracion.grabado_exito') );
@@ -90,10 +93,13 @@ class SubcategoryController extends Controller
                 $fileName = $this->saveFile($request->img, 'subcategories/',(string)(date("YmdHis")) . (string)(rand(1,9)));
             }
             $Subcategory->update([
+                'category_id' => $request->category_id,
                 'subcategory_en' => $request->subcategory_en,
                 'slug_en' => str_slug($request->subcategory_en,"-"),
                 'description_en' => $request->description_en,
-                'productoppal_id' => $request->productoppal_id,
+                'subcategory_es' => $request->subcategory_es,
+                'slug_es' => str_slug($request->subcategory_es,"-"),
+                'description_es' => $request->description_es,
                 'img' => $fileName,
             ]);
             return redirect()->route('subcategories.edit', codifica($id))->with("notificacion", __('administracion.grabado_exito') );

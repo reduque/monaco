@@ -33,7 +33,12 @@
 <form role="form" action="{{ route('categories.update', codifica($category->id)) }}" method="POST">
     {{ csrf_field() }}
     {{ method_field('PUT') }}
-   
+    <div class="row">
+        <div class="col-lg-12">
+           <h3><i class="fa fa-globe"></i> English</h3>
+       </div>
+   </div>
+
     <div class="row">
         <div class="col-lg-12">
             <div class="form-group{{ $errors->has('category_en') ? ' has-error' : '' }}">
@@ -56,6 +61,19 @@
                 @endif
                 </div>
                 <label><span>Min size 293 x 310 px | JPG o PNG</span></label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+           <h3><i class="fa fa-globe"></i> Spanish</h3>
+       </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="form-group">
+                <label>Category</label>
+                <input type="text" class="form-control" name="category_es" value="{{ old('category_es', $category->category_es) }}" maxlength="100">
             </div>
         </div>
     </div>

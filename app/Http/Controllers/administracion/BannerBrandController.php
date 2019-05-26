@@ -32,16 +32,22 @@ class BannerBrandController extends Controller
             if ($validator->fails()){
                 return back()->withErrors($validator)->withInput();
             }
-            $fileName = "";
+            $img_en = "";
             if($request->img_en){
-                $fileName = $this->saveFile($request->img_en, 'banners_brands/',(string)(date("YmdHis")) . (string)(rand(1,9)));
+                $img_en = $this->saveFile($request->img_en, 'banners_brands/',(string)(date("YmdHis")) . (string)(rand(1,9)));
+            }
+            $img_es = "";
+            if($request->img_es){
+                $img_es = $this->saveFile($request->img_es, 'banners_brands/',(string)(date("YmdHis")) . (string)(rand(1,9)));
             }
             $active = ($request->active == 1) ? 1 : 0 ;
             $banner=BannerBrand::create([
                 'title_en' => $request->title_en,
+                'title_es' => $request->title_es,
                 'link' => $request->link,
                 'active' => $active,
-                'img_en' => $fileName,
+                'img_en' => $img_en,
+                'img_es' => $img_es,
             ]);
             return redirect()->route('banners_brands.edit', codifica($banner->id))->with("notificacion", __('administracion.grabado_exito') );
 
@@ -78,18 +84,26 @@ class BannerBrandController extends Controller
             }
             $id=decodifica($id);
             $banner=BannerBrand::find($id);
-            $fileName = $banner->img_en;
+            $img_en = $banner->img_en;
             if($request->img_en){
-                if($fileName<>'')
-                    $this->deleteFile('banners_brands/' . $fileName);
-                $fileName = $this->saveFile($request->img_en, 'banners_brands/',(string)(date("YmdHis")) . (string)(rand(1,9)));
+                if($img_en<>'')
+                    $this->deleteFile('banners_brands/' . $img_en);
+                $img_en = $this->saveFile($request->img_en, 'banners_brands/',(string)(date("YmdHis")) . (string)(rand(1,9)));
+            }
+            $img_es = $banner->img_es;
+            if($request->img_es){
+                if($img_es<>'')
+                    $this->deleteFile('banners/' . $img_es);
+                $img_es = $this->saveFile($request->img_es, 'banners_brands/',(string)(date("YmdHis")) . (string)(rand(1,9)));
             }
             $active = ($request->active == 1) ? 1 : 0 ;
             $banner->update([
                 'title_en' => $request->title_en,
+                'title_es' => $request->title_es,
                 'link' => $request->link,
                 'active' => $active,
-                'img_en' => $fileName,
+                'img_en' => $img_en,
+                'img_es' => $img_es,
             ]);
             return redirect()->route('banners_brands.edit', codifica($id))->with("notificacion", __('administracion.grabado_exito') );
 
@@ -104,9 +118,12 @@ class BannerBrandController extends Controller
         $id=decodifica($id);
         try{
             $banner=BannerBrand::find($id);
-            $fileName = $banner->img_en;
-            if($fileName<>'')
-                $this->deleteFile('banners_brands/' . $fileName);
+            $img_en = $banner->img_en;
+            if($img_en<>'')
+                $this->deleteFile('banners_brands/' . $img_en);
+            $img_es = $banner->img_es;
+            if($img_es<>'')
+                $this->deleteFile('banners_brands/' . $img_es);
 
             $banner->delete();
             return redirect()->route('banners_brands.index');

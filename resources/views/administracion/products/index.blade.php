@@ -55,7 +55,7 @@
                 <tbody>
                 @foreach($products as $product)
                     <tr>
-                        <td><a href="{{ route('products.edit', codifica($product->id) ) }}" title="@lang('administracion.editar')">{{ $product->name_en }}</a></td>
+                        <td><a href="{{ route('products.edit', codifica($product->id) ) }}" title="@lang('administracion.editar')">{{ $product->name_en . ' ' . $product->size }}</a></td>
                         <td><a href="{{ route('products.edit', codifica($product->id) ) }}" title="@lang('administracion.editar')">{{ $product->category->category_en }}</a></td>
                         <td><a href="{{ route('products.edit', codifica($product->id) ) }}" title="@lang('administracion.editar')">@if($product->subcategory) {{ $product->subcategory->subcategory_en }} @endif</a></td>
                         <td><a href="{{ route('products.edit', codifica($product->id) ) }}" title="@lang('administracion.editar')">@if($product->line) {{ $product->line->line_en }} @endif</a></td>

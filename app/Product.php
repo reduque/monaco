@@ -21,6 +21,16 @@ class Product extends Model
 	public function line(){
 	    return $this->belongsTo('App\Line');
 	}
+	
+	public function relacionado(){
+	    return $this->hasOne('App\RelatedProduct','related_id')->where('related_products.product_id',session('product_id'));
+	}
+
+	public function scopeBuscar($query, $filtro){
+		if($filtro <> ''){
+			$query->where("name_en","like","%" . $filtro . "%");
+		}
+	}
 
 
 }

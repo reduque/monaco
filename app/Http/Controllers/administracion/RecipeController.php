@@ -33,7 +33,8 @@ class RecipeController extends Controller
             if ($validator->fails()){
                 return back()->withErrors($validator)->withInput();
             }
-            $slug=str_slug($request->title_en,"-");
+            $slug_en=str_slug($request->title_en,"-");
+            $slug_es=str_slug($request->title_es,"-");
             $fileName = "";
             if($request->picture){
                 $fileName = $this->saveFile($request->picture, 'recipes/',(string)(date("YmdHis")) . (string)(rand(1,9)));
@@ -41,11 +42,17 @@ class RecipeController extends Controller
             if(!$request->active) $request->request->add(['active' => 0]);
             $recipe=Recipe::create([
                 'title_en' => $request->title_en,
-                'slug_en' => $slug,
+                'slug_en' => $slug_en,
                 'ingredients_en' => $request->ingredients_en,
                 'directions_en' => $request->directions_en,
                 'serves_en' => $request->serves_en,
                 'time_en' => $request->time_en,
+                'title_es' => $request->title_es,
+                'slug_es' => $slug_es,
+                'ingredients_es' => $request->ingredients_es,
+                'directions_es' => $request->directions_es,
+                'serves_es' => $request->serves_es,
+                'time_es' => $request->time_es,
                 'recipes_categories_id' => $request->recipes_categories_id,
                 'picture' => $fileName,
                 'publication_date' => $request->publication_date,
@@ -86,7 +93,8 @@ class RecipeController extends Controller
             }
             $id=decodifica($id);
             $recipe=Recipe::find($id);
-            $slug=str_slug($request->title_en,"-");
+            $slug_en=str_slug($request->title_en,"-");
+            $slug_es=str_slug($request->title_es,"-");
             $fileName = $recipe->picture;
             if($request->picture){
                 if($fileName<>'')
@@ -96,11 +104,17 @@ class RecipeController extends Controller
             if(!$request->active) $request->request->add(['active' => 0]);
             $recipe->update([
                 'title_en' => $request->title_en,
-                'slug_en' => $slug,
+                'slug_en' => $slug_en,
                 'ingredients_en' => $request->ingredients_en,
                 'directions_en' => $request->directions_en,
                 'serves_en' => $request->serves_en,
                 'time_en' => $request->time_en,
+                'title_es' => $request->title_es,
+                'slug_es' => $slug_es,
+                'ingredients_es' => $request->ingredients_es,
+                'directions_es' => $request->directions_es,
+                'serves_es' => $request->serves_es,
+                'time_es' => $request->time_es,
                 'recipes_categories_id' => $request->recipes_categories_id,
                 'picture' => $fileName,
                 'publication_date' => $request->publication_date,
