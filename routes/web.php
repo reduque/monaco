@@ -83,5 +83,6 @@ Route::group(['middleware' => 'auth'], function () {
 		Route::get('related_products_ajax', 'ProductController@related_products_ajax')->name('related_products_ajax');
 	    Route::get('related_marcar/{id}/{accion}', 'ProductController@related_marcar')->name('related_marcar');
 
+
 	});
 });

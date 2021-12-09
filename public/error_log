@@ -1,0 +1,12 @@
+[04-Apr-2019 19:49:18 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_connect() in /home1/mosevboa/public_html/monacofoods.com/new/public/borrar.php:2
+Stack trace:
+#0 {main}
+  thrown in /home1/mosevboa/public_html/monacofoods.com/new/public/borrar.php on line 2
+[04-Apr-2019 19:51:12 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_connect() in /home1/mosevboa/public_html/monacofoods.com/new/public/borrar.php:2
+Stack trace:
+#0 {main}
+  thrown in /home1/mosevboa/public_html/monacofoods.com/new/public/borrar.php on line 2
+[04-Apr-2019 19:54:09 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_connect() in /home1/mosevboa/public_html/monacofoods.com/new/public/borrar.php:2
+Stack trace:
+#0 {main}
+  thrown in /home1/mosevboa/public_html/monacofoods.com/new/public/borrar.php on line 2
